@@ -109,7 +109,7 @@ BOTON CATEGORIAS
 <!---============================================
 BUSCADOR	
 =============================================--->
-<div class="input col-gl-8 col-md-8 col-sm-8 col-xs-12" id="buscador">
+<div class="input-group col-gl-8 col-md-8 col-sm-8 col-xs-12" id="buscador">
 <input type="search" name="buscar" class="form-control" placeholder="Buscar....">
 <span class="input-group-btn">
 

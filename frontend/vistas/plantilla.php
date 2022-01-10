@@ -15,6 +15,7 @@
    <link rel="stylesheet" href="vistas/css/cabezote.css">
    <script src="vistas/js/plugins/jquery.min.js"></script>
    <script src="vistas/js/plugins/bootstrap.min.js"></script>
+   
 </head>
 <body>
 
@@ -25,5 +26,9 @@
     include "modulos/cabezote.php";
 
 ?>
+
+
+<script src="vistas/js/cabezote.js"></script>
+
 </body>
 </html>
