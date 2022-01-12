@@ -8,7 +8,13 @@
    <meta name="description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolorem odio sed quam tenetur dolore quos, corporis id aliquid suscipit maiores praesentium quaerat. Voluptate sint iure harum nostrum, excepturi doloribus?">
    <meta name="keyword" content="Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Animi dolorem odio, sed quam tenetur dolore quos, corporis id aliquid suscipit maiores praesentium quaerat. Voluptate sint iure harum nostrum, excepturi doloribus?">
    <title>Box gift</title>
-  
+   <?php
+   $icono = ControladorPlantilla::ctrEstiloPlantilla();
+
+   
+echo '<link rel="icon" href="http://localhost/ecommerce_apr/backend/'.$icono["icono"].'">';
+
+   ?>
    <link rel="stylesheet" href="vistas/css/plugins/bootstrap.min.css">
    <link rel="stylesheet" href="vistas/css/plugins/font-awesome.min.css">
    <link rel="stylesheet" href="vistas/css/plantilla.css">
