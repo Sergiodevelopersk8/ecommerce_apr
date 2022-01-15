@@ -139,82 +139,34 @@ Categorias
 =============================================--->
 <div class="col-xs-12 backColor" id="categorias">
 
-<div class="col-gl-2 col-md-2 col-sm-4 col-xs-12">
+<?php
+$categorias = ControladorProductos::ctrMostrarCategorias();
 
-<h4>
-	<a href="#" class="pixelCategorias">Lorem ipsum dolor sit</a>
-</h4>
-<hr>
-<ul>
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
+foreach($categorias as $key => $value){
+	echo '
+	<div class="col-gl-2 col-md-2 col-sm-4 col-xs-12">
 	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-</ul>
-</div>
+	<h4>
+		<a href="#" class="pixelCategorias">'.$value["categoria"].'</a>
+	</h4>
+	<hr>
+	<ul>';
 
-<div class="col-gl-2 col-md-2 col-sm-4 col-xs-12">
+	$subcategorias= ControladorProductos::ctrMostrarSubCategorias($value["id"]);
 
-<h4>
-	<a href="#" class="pixelCategorias">Lorem ipsum dolor sit</a>
-</h4>
-<hr>
-<ul>
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-</ul>
-</div>
+	foreach($subcategorias as $key => $value){
 
-<div class="col-gl-2 col-md-2 col-sm-4 col-xs-12">
+echo '<li><a href="#" class="pixelCategorias">'.$value["subcategoria"].'</a></li>
+';
 
-<h4>
-	<a href="#" class="pixelCategorias">Lorem ipsum dolor sit</a>
-</h4>
-<hr>
-<ul>
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-</ul>
-</div>
+	}
 
-<div class="col-gl-2 col-md-2 col-sm-4 col-xs-12">
 
-<h4>
-	<a href="#" class="pixelCategorias">Lorem ipsum dolor sit</a>
-</h4>
-<hr>
-<ul>
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-	
-	<li><a href="#" class="pixelCategorias">Lorem</a></li>
-</ul>
-</div>
-
+echo '</ul>
+	</div>
+	';
+}
+?>
 
 </div>
 
