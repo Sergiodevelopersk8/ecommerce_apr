@@ -9,12 +9,18 @@ class ModeloProductos{
  ===================================*/
 
 
-    static public function mdlMostrarCategorias($tabla){
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
-        $stmt -> execute();
-        return $stmt -> fetchAll();
-        $stmt = null;
+    static public function mdlMostrarCategorias($tabla, $item, $valor){
+        if($item != null){
 
+        }
+        else{
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+            $stmt -> execute();
+            return $stmt -> fetchAll();
+            $stmt = null;
+    
+        }
+        
     }
 
 /**=================================

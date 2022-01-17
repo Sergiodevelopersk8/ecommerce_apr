@@ -1,0 +1,9 @@
+# Impedir que se vea el listado de un directorio
+
+Options All -Indexes
+
+# Crear urls amigables
+
+RewriteEngine On
+
+RewriteRule  ^([-a-zA-Z0-9/]+)$ index.php?ruta=$1

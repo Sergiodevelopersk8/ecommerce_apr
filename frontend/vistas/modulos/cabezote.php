@@ -147,7 +147,7 @@ foreach($categorias as $key => $value){
 	<div class="col-gl-2 col-md-2 col-sm-4 col-xs-12">
 	
 	<h4>
-		<a href="#" class="pixelCategorias">'.$value["categoria"].'</a>
+		<a href="'.$value["ruta"].'" class="pixelCategorias">'.$value["categoria"].'</a>
 	</h4>
 	<hr>
 	<ul>';
@@ -156,7 +156,7 @@ foreach($categorias as $key => $value){
 
 	foreach($subcategorias as $key => $value){
 
-echo '<li><a href="#" class="pixelCategorias">'.$value["subcategoria"].'</a></li>
+echo '<li><a href="'.$value["ruta"].'" class="pixelCategorias">'.$value["subcategoria"].'</a></li>
 ';
 
 	}
