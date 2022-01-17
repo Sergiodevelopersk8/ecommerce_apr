@@ -36,18 +36,52 @@ $url = Ruta::ctrRuta();
     ========================================*/
     include "modulos/cabezote.php";
 
+
+
+    /*=======================================
+        CONTENIDO DINAMICO
+    ========================================*/
+
+
 $rutas = array();
+$ruta = null;
 
 if(isset($_GET["ruta"])){
   
-    $item = "ruta"; 
-    $valor = $_GET["ruta"];
+   
 
 $rutas = explode("/", $_GET["ruta"]);
+$item = "ruta"; 
+$valor = $rutas[0];
 
+    /*=======================================
+        URLS AMIGABLES DE CATEGORIAS
+    ========================================*/
 $rutaCategorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
-if($rutas[0]== "bolsos")
+if($rutas[0] == $rutaCategorias["ruta"]){
+    $ruta = $rutas[0];
+}
+
+
+    /*=======================================
+        URLS AMIGABLES DE SUBCATEGORIAS
+    ========================================*/
+    $rutaSubCategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
+    foreach($rutaSubCategorias as $key => $value){
+    
+    if($rutas[0]== $value["ruta"]){
+
+$ruta = $rutas[0];
+
+    }
+}
+    /*=======================================
+        LISTA BLANCA DE URLS AMIGABLES
+    ========================================*/
+
+
+if($rutas!= null)
 {
 include "modulos/productos.php";
 

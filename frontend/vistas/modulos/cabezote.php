@@ -140,7 +140,10 @@ Categorias
 <div class="col-xs-12 backColor" id="categorias">
 
 <?php
-$categorias = ControladorProductos::ctrMostrarCategorias();
+
+$item = null;
+$valor = null;
+$categorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
 foreach($categorias as $key => $value){
 	echo '
@@ -151,8 +154,9 @@ foreach($categorias as $key => $value){
 	</h4>
 	<hr>
 	<ul>';
-
-	$subcategorias= ControladorProductos::ctrMostrarSubCategorias($value["id"]);
+	$item = "id_categoria";
+$valor = $value["id"];
+	$subcategorias= ControladorProductos::ctrMostrarSubCategorias($item, $valor);
 
 	foreach($subcategorias as $key => $value){
 

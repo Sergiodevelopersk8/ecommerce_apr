@@ -17,9 +17,9 @@ static public function ctrMostrarCategorias($item, $valor){
  Mostrar SubCategorias
  ===================================*/
 
- static public function ctrMostrarSubCategorias($id){
+ static public function ctrMostrarSubCategorias($item, $valor){
     $tabla = "subcategorias";
-    $respueta = ModeloProductos::mdlMostrarSubCategorias($tabla, $id);
+    $respueta = ModeloProductos::mdlMostrarSubCategorias($tabla, $item, $valor);
     return $respueta;
 }
 
