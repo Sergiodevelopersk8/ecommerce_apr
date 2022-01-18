@@ -44,7 +44,8 @@ $url = Ruta::ctrRuta();
 
 
 $rutas = array();
-$ruta = null;
+$ruta = "";
+
 
 if(isset($_GET["ruta"])){
   
@@ -57,12 +58,19 @@ $valor = $rutas[0];
     /*=======================================
         URLS AMIGABLES DE CATEGORIAS
     ========================================*/
+$rutaCategorias;
 $rutaCategorias = ControladorProductos::ctrMostrarCategorias($item, $valor);
 
-if($rutas[0] == $rutaCategorias["ruta"]){
-    $ruta = $rutas[0];
-}
 
+if(is_array($rutaCategorias)){
+
+    if($valor == $rutaCategorias["ruta"]){
+
+        $ruta = $valor;
+
+    }
+    
+}
 
     /*=======================================
         URLS AMIGABLES DE SUBCATEGORIAS
@@ -81,7 +89,7 @@ $ruta = $rutas[0];
     ========================================*/
 
 
-if($rutas!= null)
+if($ruta!= null)
 {
 include "modulos/productos.php";
 
