@@ -23,7 +23,8 @@ $url = Ruta::ctrRuta();
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plugins/bootstrap.min.css">
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plugins/font-awesome.min.css">
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plantilla.css">
-   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/cabezote.css">
+   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/cabezote.css">   
+   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/slide.css">
    <script src="<?php echo $url;?>vistas/js/plugins/jquery.min.js"></script>
    <script src="<?php echo $url;?>vistas/js/plugins/bootstrap.min.js"></script>
    
@@ -99,6 +100,9 @@ else{
 }
 
 
+}
+else{
+    include "modulos/slide.php";
 }
 
 
