@@ -35,8 +35,11 @@ SLIDE
 	opacity:1;
 	top:15%;
 	right: 10%;
-	width: 45%;
+	width:45%;
 }
+
+
+
 
 #slide .slideOpcion1 .textosSlide{
 	position:absolute;
@@ -44,7 +47,19 @@ SLIDE
 	top: 20%;
 	left: 10%;
 }
-#slide .slideOpciones h1{	
+
+
+#slide .slideOpcion2 .textosSlide{
+	position:absolute;
+	width: 40%;
+	top: 15%;
+	right: 15%;
+}
+
+
+
+
+#slide .slideOpcion1 h1{	
 	text-transform: uppercase;
 	font-size: 50px;
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -52,6 +67,17 @@ SLIDE
 	top:-10%;
 	color:#777;
 }
+
+
+#slide .slideOpcion2 img{
+	position:absolute;
+	opacity:1;
+	top:15%;
+	left: 10%;
+	width: 15%;
+}
+
+
 #slide .slideOpciones h2{	
 	text-transform: uppercase;
 	font-size: 35px;
