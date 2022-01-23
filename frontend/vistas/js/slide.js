@@ -3,7 +3,7 @@ VARIABLES
 =============================================*/
 
 var item = 0;
-/*
+
 var itemPaginacion = $("#paginacion li");
 var interrumpirCiclo = false;
 var imgProducto = $(".imgProducto");
@@ -13,7 +13,7 @@ var titulos3 = $("#slide h3");
 var btnVerProducto = $("#slide button");
 var detenerIntervalo = false;
 var toogle = false;
-
+/*
 $("#slide ul li").css({"width":100/$("#slide ul li").length + "%"})
 $("#slide ul").css({"width":$("#slide ul li").length*100 + "%"})
 */
@@ -52,7 +52,7 @@ $("#paginacion li").click(function(){
 /*=============================================
 AVANZAR
 =============================================*/
-/*
+
 function avanzar(){
 
 	if(item == $("#slide ul li").length -1){
@@ -69,18 +69,18 @@ function avanzar(){
 
 	movimientoSlide(item);
 
-}*/
-/*
+}
+
 $("#slide #avanzar").click(function(){
 
 	avanzar();
 
 })
-*/
+
 /*=============================================
 RETROCEDER
 =============================================*/
-/*
+
 $("#slide #retroceder").click(function(){
 
 	if(item == 0){
@@ -95,7 +95,7 @@ $("#slide #retroceder").click(function(){
 
 	movimientoSlide(item);
 
-})*/
+})
 
 
 /*=============================================
@@ -110,11 +110,11 @@ function movimientoSlide(item){
 
 	$("#slide ul").animate({"left": item * -100 + "%"}, 1000)
 
-	/*$("#paginacion li").css({"opacity":.5})
+	$("#paginacion li").css({"opacity":.5})
 
 	$(itemPaginacion[item]).css({"opacity":1})
 
-	interrumpirCiclo = true;
+	/*interrumpirCiclo = true;
 
 	$(imgProducto[item]).animate({"top":-10 +"%", "opacity": 0},100)
 	$(imgProducto[item]).animate({"top":30 +"px", "opacity": 1},600)
@@ -135,7 +135,7 @@ function movimientoSlide(item){
 /*=============================================
 INTERVALO
 =============================================*/
-/*
+
 setInterval(function(){
 
 	if(interrumpirCiclo){
@@ -156,7 +156,7 @@ setInterval(function(){
 
 	}
 
-},3000)*/
+},3000)
 
 /*=============================================
 APARECER FLECHAS
