@@ -146,7 +146,7 @@ z-index:2;
 	top: 37%;
 	left: 0;
 	font-size: 22px;
-	opacity: 1;
+	opacity: 0;
 }
 
 
@@ -156,7 +156,7 @@ z-index:2;
 	top: 37%;
 	right: 0;
 	font-size: 22px;
-	opacity: 1;
+	opacity: 0;
 }
 
 
@@ -205,3 +205,87 @@ text-shadow: 0px 0px 5px #333;
 }
 
 
+
+/*==========================================================
+ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamosen 768px)
+=============================================================
+*/
+
+@media (max-width:991px) and (min-width:768px) {
+
+	
+#slide .slideOpciones h1{
+	margin-bottom: 25px;
+	margin-top: 5px;
+	font-size: 15px;
+	
+}
+
+#slide .slideOpciones h2{
+	display: none;
+}
+
+
+
+#slide .slideOpciones h3{
+	font-size: 10px;
+	margin-bottom: -5px;
+}
+
+
+#slide .slideOpciones button{
+	
+	margin-top: 10px;
+	padding: 5px 5px;
+	font-size: 10px;
+}
+
+
+	
+}
+
+
+
+
+
+/*==========================================================
+MOVIL  (XS revisamosen 320px)
+=============================================================
+*/
+
+@media (max-width:767px){
+
+#slide #retroceder, #slide #avanzar{
+	display: none;
+}
+
+
+#slide .slideOpciones h1{
+	margin-bottom: -20px;
+	margin-top: 5px;
+	font-size: 15px;
+	
+}
+
+#slide .slideOpciones h2{
+	display: none;
+}
+
+
+
+#slide .slideOpciones h3{
+	font-size: 10px;
+	margin-bottom: -5px;
+}
+
+
+#slide .slideOpciones button{
+	
+	margin-top: 10px;
+	padding: 5px 5px;
+	font-size: 10px;
+}
+
+
+
+}

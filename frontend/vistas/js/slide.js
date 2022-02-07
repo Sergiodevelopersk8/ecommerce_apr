@@ -20,7 +20,7 @@ $("#slide ul").css({"width":$("#slide ul li").length*100 + "%"})
 /*=============================================
 ANIMACIÓN INICIAL
 =============================================*/
-/*
+
 $(imgProducto[item]).animate({"top":-10 +"%", "opacity": 0},100)
 $(imgProducto[item]).animate({"top":30 +"px", "opacity": 1},600)
 
@@ -35,7 +35,7 @@ $(titulos3[item]).animate({"top":30 +"px", "opacity": 1},600)
 
 $(btnVerProducto[item]).animate({"top":-10 +"%", "opacity": 0},100)
 $(btnVerProducto[item]).animate({"top":30 +"px", "opacity": 1},600)
-*/
+
 
 /*=============================================
 PAGINACIÓN
@@ -108,16 +108,16 @@ function movimientoSlide(item){
 
 	// http://easings.net/es
 
-	$("#slide ul").animate({"left": item * -100 + "%"}, 1000)
+	$("#slide ul").animate({"left": item * -100 + "%"}, 1000, "easeOutQuart")
 
 	$("#paginacion li").css({"opacity":.5})
 
 	$(itemPaginacion[item]).css({"opacity":1})
 
-	/*interrumpirCiclo = true;
+	interrumpirCiclo = true;
 
-	$(imgProducto[item]).animate({"top":-10 +"%", "opacity": 0},100)
-	$(imgProducto[item]).animate({"top":30 +"px", "opacity": 1},600)
+	$(imgProducto[item]).animate({"top":-10 +"%", "opacity": 0},100, "easeOutBounce")
+	$(imgProducto[item]).animate({"top":30 +"px", "opacity": 1},600, "easeOutBounce")
 
 	$(titulos1[item]).animate({"top":-10 +"%", "opacity": 0},100)
 	$(titulos1[item]).animate({"top":30 +"px", "opacity": 1},600)
@@ -129,7 +129,7 @@ function movimientoSlide(item){
 	$(titulos3[item]).animate({"top":30 +"px", "opacity": 1},600)
 
 	$(btnVerProducto[item]).animate({"top":-10 +"%", "opacity": 0},100)
-	$(btnVerProducto[item]).animate({"top":30 +"px", "opacity": 1},600)*/
+	$(btnVerProducto[item]).animate({"top":30 +"px", "opacity": 1},600)
 }
 
 /*=============================================
@@ -161,7 +161,7 @@ setInterval(function(){
 /*=============================================
 APARECER FLECHAS
 =============================================*/
-/*
+
 $("#slide").mouseover(function(){
 
 	$("#slide #retroceder").css({"opacity":1})
@@ -180,7 +180,7 @@ $("#slide").mouseout(function(){
 	detenerIntervalo = false;
 
 })
-*/
+
 /*=============================================
 ESCONDER SLIDE
 =============================================*/
