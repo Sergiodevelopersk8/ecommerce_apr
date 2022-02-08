@@ -174,3 +174,9 @@ style="top:5%; left:15%; width:25%;">
 	</div>
 
 </div>
+
+<center>
+	<button id="btnSlide" class="backColor">
+		<i class="fa fa-angle-up"></i>
+	</button>
+</center>

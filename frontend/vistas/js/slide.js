@@ -184,10 +184,10 @@ $("#slide").mouseout(function(){
 /*=============================================
 ESCONDER SLIDE
 =============================================*/
-/*
+
 $("#btnSlide").click(function(){
 
-	if(!toogle){
+	if(toogle == false ){
 
 		toogle = true;
 
@@ -204,4 +204,4 @@ $("#btnSlide").click(function(){
 		$("#btnSlide").html('<i class="fa fa-angle-up"></i>')
 	}
 
-})*/
+});
