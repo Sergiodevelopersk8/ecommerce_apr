@@ -15,18 +15,25 @@ SLIDESHOW
 		======================================-->
 <ul>
 
-		<!--=====================================
-		SLIDE1
-		======================================-->
+<?php
 
+
+ $slide = ControladorSlide::ctrMostrarSlide();
+
+foreach ($slide as $key => $value) {
+$estiloImgProduct=json_decode($value["estiloImgProducto"],true);
+
+
+echo '
 <li>
-	<img src="http://localhost/ecommerce_apr/backend/vistas/img/slide/default/back_default.jpg" alt="">
+	<img src="http://localhost/ecommerce_apr/backend/'.$value["imgFondo"].'" alt="">
 
-<div class="slideOpciones slideOpcion1">
+<div class="slideOpciones '.$value["tipoSlide"].'">
 
 <img class="imgProducto" 
-src="http://localhost/ecommerce_apr/backend/vistas/img/slide/slide1/calzado.png" 
-style="top:15%; right:10%; width:45%;">
+src="http://localhost/ecommerce_apr/backend/'.$value["imgProducto"].'" 
+style="'.$estiloImgProduct["top"].'; right:'.$estiloImgProduct["right"].'; width:'.$estiloImgProduct["width"].' 
+left:'.$estiloImgProduct["left"].'">
 
 <div class="textosSlide" style="top:20%; left:10%; width:40%;">
 	<h1 style="color:#333">Lorem ipsum </h1 >
@@ -36,7 +43,7 @@ style="top:15%; right:10%; width:45%;">
 
 <a href="#">
 	<button class="btn btn-default backColor text-uppercase">
-		VER PRODUCTO : <span class="fa fa-chevron-right"></span>
+		VER PRODUCTO  <span class="fa fa-chevron-right"></span>
 	
 	</button>
 </a>
@@ -47,6 +54,14 @@ style="top:15%; right:10%; width:45%;">
 </div>
 
 </li>
+';
+}
+?>
+
+
+		<!--=====================================
+		SLIDE1
+		======================================-->
 
 		<!--=====================================
 		SLIDE2
