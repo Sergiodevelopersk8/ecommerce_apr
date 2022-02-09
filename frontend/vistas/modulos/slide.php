@@ -36,7 +36,7 @@ style="top:15%; right:10%; width:45%;">
 
 <a href="#">
 	<button class="btn btn-default backColor text-uppercase">
-		VER PRODUCTO <span class="fa fa-chevron-right"></span>
+		VER PRODUCTO : <span class="fa fa-chevron-right"></span>
 	
 	</button>
 </a>
