@@ -9,25 +9,41 @@
    <meta name="keyword" content="Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Animi dolorem odio, sed quam tenetur dolore quos, corporis id aliquid suscipit maiores praesentium quaerat. Voluptate sint iure harum nostrum, excepturi doloribus?">
    <title>Box gift</title>
    <?php
+
+$servidor = Ruta::ctrRutaServidor();
+
    $icono = ControladorPlantilla::ctrEstiloPlantilla();
 
    
-echo '<link rel="icon" href="http://localhost/ecommerce_apr/backend/'.$icono["icono"].'">';
+echo '<link rel="icon" href=" '.$servidor.$icono["icono"].'">';
 /**=========
  * Mantener la ruta fija del proyecto
  ==============*/
 $url = Ruta::ctrRuta();
 
 
+
    ?>
+   
+   <!----=========
+PLUGINS CSS Y JS
+ ==============---->
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plugins/bootstrap.min.css">
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plugins/font-awesome.min.css">
-   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plantilla.css">
-   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/cabezote.css">   
-   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/slide.css">
    <script src="<?php echo $url;?>vistas/js/plugins/jquery.min.js"></script>
    <script src="<?php echo $url;?>vistas/js/plugins/bootstrap.min.js"></script>
    <script src="<?php echo $url;?>vistas/js/plugins/jquery.easing.js"></script>
+
+   <!----=========
+ HOJAS DE ESTILOS PERSONALIZADAS
+ ==============---->
+
+
+   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/productos.css">
+   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plantilla.css">
+   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/cabezote.css">   
+   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/slide.css">
+   
    
 </head>
 <body>
@@ -104,12 +120,15 @@ else{
 }
 else{
     include "modulos/slide.php";
+    include "modulos/destacados.php";
 }
 
 
 ?>
 
-
+ <!----=========
+ JS PERSONALIZADOS
+ ==============---->
 <script src="<?php echo $url;?>vistas/js/cabezote.js"></script>
 <script src="<?php echo $url;?>vistas/js/plantilla.js"></script>
 <script src="<?php echo $url;?>vistas/js/slide.js"></script>

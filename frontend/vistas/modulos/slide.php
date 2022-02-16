@@ -17,7 +17,7 @@ SLIDESHOW
 
 <?php
 
-
+$servidor = Ruta::ctrRutaServidor();
  $slide = ControladorSlide::ctrMostrarSlide();
 
 foreach ($slide as $key => $value) {
@@ -30,18 +30,21 @@ $titulo3=json_decode($value["titulo3"],true);
 
 echo '
 <li>
-	<img src="http://localhost/ecommerce_apr/backend/'.$value["imgFondo"].'" alt="">
+	<img src="'.$servidor.$value["imgFondo"].'" alt="">
 
-<div class="slideOpciones '.$value["tipoSlide"].'">
+<div class="slideOpciones '.$value["tipoSlide"].'">';
 
-<img class="imgProducto" 
-src="http://localhost/ecommerce_apr/backend/'.$value["imgProducto"].'" 
+
+if ( $value["imgProducto"] != ""){
+
+ echo '<img class="imgProducto" 
+src="'.$servidor.$value["imgProducto"].'" 
 style="top:'.$estiloImgProducto["top"].';
  right:'.$estiloImgProducto["right"].'; 
  width:'.$estiloImgProducto["width"].' ;
-left:;">
-
-<div class="textosSlide" 
+left:'.$estiloImgProducto["left"].';">';
+}
+echo '<div class="textosSlide" 
 style="top:'.$estiloTextoSlide["top"].'; 
 left:'.$estiloTextoSlide["left"].';
  width:'.$estiloTextoSlide["width"].';

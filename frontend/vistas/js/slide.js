@@ -110,14 +110,20 @@ function movimientoSlide(item){
 
 	$("#slide ul").animate({"left": item * -100 + "%"}, 1000, "easeOutQuart")
 
+	// $("#slide ul").animate({"left": item * -100 + "%"}, 1000)
+
 	$("#paginacion li").css({"opacity":.5})
 
 	$(itemPaginacion[item]).css({"opacity":1})
 
 	interrumpirCiclo = true;
-
+	
 	$(imgProducto[item]).animate({"top":-10 +"%", "opacity": 0},100, "easeOutBounce")
 	$(imgProducto[item]).animate({"top":30 +"px", "opacity": 1},600, "easeOutBounce")
+
+
+	// $(imgProducto[item]).animate({"top":-10 +"%", "opacity": 0},100)
+	// $(imgProducto[item]).animate({"top":30 +"px", "opacity": 1},600)
 
 	$(titulos1[item]).animate({"top":-10 +"%", "opacity": 0},100)
 	$(titulos1[item]).animate({"top":30 +"px", "opacity": 1},600)
