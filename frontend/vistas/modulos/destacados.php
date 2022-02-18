@@ -80,10 +80,10 @@ Barra de porductos gratis
 
 <!--======================
 
-VITRINA DE PRODUCTOS EN CUADRICULAS
+VITRINA DE PRODUCTOS GRATIS EN CUADRICULAS
 
 ===================--->
-<ul class="grid0">
+<ul class="grid0" style="display:none">
 <!---PRODUCTO 1 -->
 <li class="col-md-3 col-sm-6 col-xs-12">
 <!-------===========================================---->
@@ -305,6 +305,201 @@ Pulsera de diamantes <br>
 </li>
 
 </ul>
+
+<!---=============================================================
+VITRINA DE PRODUCTOS GRATIS EN LISTA 
+==============================================------------->
+<ul class="list0">
+<!-- Producto 1 -->
+<li class="col-xs-12">
+    <!-- =================================================-->
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+
+<figure>
+    <a href="#" class="pixelProducto"><img src="http://localhost/ecommerce_apr/backend/vistas/img/productos/accesorios/accesorio04.jpg"
+         class="img-responsive"></a>
+</figure>
+</div>
+
+
+
+<!-- ========================= =======================-->
+<div class="col-lg-10 col-md-7 col-sm-8 col-xs-12">
+<h1>
+    <small>
+        <a href="collar-de-diamantes" class="pixeProducto">Collar de diamantes</a>
+    </small>
+</h1>
+<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+     Libero dolorem debitis at? Libero, explicabo.
+      Praesentium voluptate sint facilis tempora, nihil laudantium dolore nostrum. Est illo,
+     quaerat officiis officia expedita veniam.</p>
+    <h2><small>GRATIS</small></h2>
+    <button type="button" class="btn btn-default btn-xs deseos" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+<i class="fa fa-heart corazon" aria-hidden="true"></i>
+
+    </button>
+        <a href="#" class="pixelProducto ojito">
+<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver Producto">
+<i class="fa fa-eye" aria-hidden="true"></i>
+
+        </a>
+    </button>
+    
+    </div>
+<!-- ============================================ -->
+<div class="col-xs-12">
+    <hr>
+
+</div>
+
+</li>
+
+<!-- Producto 2 -->
+<li class="col-xs-12">
+    <!-- =================================================-->
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+
+<figure>
+    <a href="#" class="pixelProducto"><img 
+    src="http://localhost/ecommerce_apr/backend/vistas/img/productos/accesorios/accesorio03.jpg"
+         class="img-responsive"></a>
+</figure>
+</div>
+
+
+
+<!-- ========================= =======================-->
+<div class="col-lg-10 col-md-7 col-sm-8 col-xs-12">
+<h1>
+    <small>
+        <a href="collar-de-diamantes" class="pixeProducto">Bolso Deportivo</a>
+    </small>
+</h1>
+<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+     Libero dolorem debitis at? Libero, explicabo.
+      Praesentium voluptate sint facilis tempora, nihil laudantium dolore nostrum. Est illo,
+     quaerat officiis officia expedita veniam.</p>
+    <h2><small>GRATIS</small></h2>
+    <button type="button" class="btn btn-default btn-xs deseos" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+<i class="fa fa-heart corazon" aria-hidden="true"></i>
+
+    </button>
+        <a href="#" class="pixelProducto ojito">
+<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver Producto">
+<i class="fa fa-eye" aria-hidden="true"></i>
+
+        </a>
+    </button>
+    
+    </div>
+<!-- ============================================ -->
+<div class="col-xs-12">
+    <hr>
+    
+</div>
+
+</li>
+
+<!-- Producto 3 -->
+<li class="col-xs-12">
+    <!-- =================================================-->
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+
+<figure>
+    <a href="#" class="pixelProducto"><img 
+    src="http://localhost/ecommerce_apr/backend/vistas/img/productos/accesorios/accesorio02.jpg"
+         class="img-responsive"></a>
+</figure>
+</div>
+
+
+
+<!-- ========================= =======================-->
+<div class="col-lg-10 col-md-7 col-sm-8 col-xs-12">
+<h1>
+    <small>
+        <a href="collar-de-diamantes" class="pixeProducto">Bolso Militar</a>
+    </small>
+</h1>
+<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+     Libero dolorem debitis at? Libero, explicabo.
+      Praesentium voluptate sint facilis tempora, nihil laudantium dolore nostrum. Est illo,
+     quaerat officiis officia expedita veniam.</p>
+    <h2><small>GRATIS</small></h2>
+    <button type="button" class="btn btn-default btn-xs deseos" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+<i class="fa fa-heart corazon" aria-hidden="true"></i>
+
+    </button>
+        <a href="#" class="pixelProducto ojito">
+<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver Producto">
+<i class="fa fa-eye" aria-hidden="true"></i>
+
+        </a>
+    </button>
+    
+    </div>
+<!-- ============================================ -->
+<div class="col-xs-12">
+    <hr>
+    
+</div>
+
+</li>
+
+
+
+<!-- Producto 4 -->
+<li class="col-xs-12">
+    <!-- =================================================-->
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+
+<figure>
+    <a href="#" class="pixelProducto"><img 
+    src="http://localhost/ecommerce_apr/backend/vistas/img/productos/accesorios/accesorio01.jpg"
+         class="img-responsive"></a>
+</figure>
+</div>
+
+
+
+<!-- ========================= =======================-->
+<div class="col-lg-10 col-md-7 col-sm-8 col-xs-12">
+<h1>
+    <small>
+        <a href="collar-de-diamantes" class="pixeProducto">Pulsera de Diamantes</a>
+    </small>
+</h1>
+<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+     Libero dolorem debitis at? Libero, explicabo.
+      Praesentium voluptate sint facilis tempora, nihil laudantium dolore nostrum. Est illo,
+     quaerat officiis officia expedita veniam.</p>
+    <h2><small>GRATIS</small></h2>
+    <button type="button" class="btn btn-default btn-xs deseos" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+<i class="fa fa-heart corazon" aria-hidden="true"></i>
+
+    </button>
+        <a href="#" class="pixelProducto ojito">
+<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver Producto">
+<i class="fa fa-eye" aria-hidden="true"></i>
+
+        </a>
+    </button>
+    
+    </div>
+<!-- ============================================ -->
+<div class="col-xs-12">
+    <hr>
+    
+</div>
+
+</li>
+
+
+
+
+</ul>
+
 
 </div>
 
