@@ -574,7 +574,7 @@ Barra de porductos Mas vendidos
 VITRINA DE PRODUCTOS EN CUADRICULAS
 
 ===================--->
-<ul class="grid1" style="display:none">
+<ul class="grid1" >
 
 <!---PRODUCTO 1 -->
 <li class="col-md-3 col-sm-6 col-xs-12">
@@ -833,7 +833,7 @@ Vestido Jeans <br>
 Vitrina de Lo mas vendido en lista 
 ========================================================= -->
 
-<ul class="list1">
+<ul class="list1" style="display:none">
    <!-- Producto 1  -->
 
 <li class="col-xs-12">
@@ -975,7 +975,7 @@ Barra de porductos mas vistos
 VITRINA DE PRODUCTOS EN CUADRICULAS
 
 ===================--->
-<ul class="grid1" style="display: none;">
+<ul class="grid2" >
 
 <!---PRODUCTO 1 -->
 <li class="col-md-3 col-sm-6 col-xs-12">
@@ -1263,7 +1263,7 @@ precio="10" tipo="virtual" pesos="0" data-toggle="tooltip" title="Agregar a mi l
 Vitrina de Lo mas vistos en lista 
 ========================================================= -->
 
-<ul class="list2">
+<ul class="list2" style="display:none">
    <!-- Producto 1  -->
 
 <li class="col-xs-12">
