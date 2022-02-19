@@ -83,7 +83,7 @@ Barra de porductos gratis
 VITRINA DE PRODUCTOS GRATIS EN CUADRICULAS
 
 ===================--->
-<ul class="grid0" style="display:none">
+<ul class="grid0" >
 <!---PRODUCTO 1 -->
 <li class="col-md-3 col-sm-6 col-xs-12">
 <!-------===========================================---->
@@ -309,7 +309,7 @@ Pulsera de diamantes <br>
 <!---=============================================================
 VITRINA DE PRODUCTOS GRATIS EN LISTA 
 ==============================================------------->
-<ul class="list0">
+<ul class="list0" style="display:none;">
 <!-- Producto 1 -->
 <li class="col-xs-12">
     <!-- =================================================-->
