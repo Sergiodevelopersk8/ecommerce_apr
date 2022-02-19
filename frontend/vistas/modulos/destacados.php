@@ -574,7 +574,7 @@ Barra de porductos Mas vendidos
 VITRINA DE PRODUCTOS EN CUADRICULAS
 
 ===================--->
-<ul class="grid1">
+<ul class="grid1" style="display:none">
 
 <!---PRODUCTO 1 -->
 <li class="col-md-3 col-sm-6 col-xs-12">
@@ -828,6 +828,78 @@ Vestido Jeans <br>
 
 </ul>
 
+<!-- 
+=========================================================
+Vitrina de Lo mas vendido en lista 
+========================================================= -->
+
+<ul class="list1">
+   <!-- Producto 1  -->
+
+<li class="col-xs-12">
+
+<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+    <figure>
+        <a href="#" class="pixelProducto">
+            <img src="http://localhost/ecommerce_apr/backend/vistas/img/productos/ropa/ropa03.jpg" 
+             class="img-responsive">
+        </a>
+    </figure>
+</div>
+
+
+    <!-- ============================================= -->
+    <div class="col-lg-10 col-md-7 col-sm-8 col-xs-12">
+        <h1>
+            <small>
+                <a href="falda-de-flores" class="pixelProducto">
+                    Falda de flores
+                    <span class="label label-warning">Nuevo</span>
+                    
+                    <span class="label label-warning">40% off</span>
+                </a>
+            </small>
+        </h1>
+
+<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Est ipsam quia expedita a animi,
+     ratione modi blanditiis eius iste quasi tempora consectetur minima qui id vitae,
+      dignissimos reprehenderit dolorem aperiam.</p>
+
+      <h2>
+        <small>
+            <strong class="oferta">UDS $29</strong>
+        </small>
+        <small>$11</small>
+    </h2>
+<div class="btn-group pull-left enlace">
+<button type="button" class="btn btn-default btn-xs deseos" idProducto="1" data-toggle="tooltip"
+title="Agregar a mi lista de deseos">
+<i class="fa fa-heart" aria-hidden="true"></i>
+</button>
+
+<a href="#" class="pixelProducto">
+<button type="button" class="btn btn-default btn-xs "  data-toggle="tooltip"
+title="Ver Producto">
+<i class="fa fa-eye" aria-hidden="true"></i>
+</button>
+</a>
+
+
+</div>
+
+    </div>
+
+   
+
+
+<!-- =========================================== -->
+
+</li>
+
+</ul>
+
+
 </div>
 
 </div>
@@ -903,7 +975,7 @@ Barra de porductos mas vistos
 VITRINA DE PRODUCTOS EN CUADRICULAS
 
 ===================--->
-<ul class="grid1">
+<ul class="grid1" style="display: none;">
 
 <!---PRODUCTO 1 -->
 <li class="col-md-3 col-sm-6 col-xs-12">
@@ -1184,6 +1256,85 @@ precio="10" tipo="virtual" pesos="0" data-toggle="tooltip" title="Agregar a mi l
 
 
 </ul>
+
+
+<!-- 
+=========================================================
+Vitrina de Lo mas vistos en lista 
+========================================================= -->
+
+<ul class="list2">
+   <!-- Producto 1  -->
+
+<li class="col-xs-12">
+
+<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+    <figure>
+        <a href="#" class="pixelProducto">
+            <img src="http://localhost/ecommerce_apr/backend/vistas/img/productos/cursos/curso05.jpg" 
+             class="img-responsive">
+        </a>
+    </figure>
+</div>
+
+
+    <!-- ============================================= -->
+    <div class="col-lg-10 col-md-7 col-sm-8 col-xs-12">
+        <h1>
+            <small>
+                <a href="falda-de-flores" class="pixelProducto">
+                  Curso de Bootstrap
+                    </a>
+            </small>
+        </h1>
+
+<p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Est ipsam quia expedita a animi,
+     ratione modi blanditiis eius iste quasi tempora consectetur minima qui id vitae,
+      dignissimos reprehenderit dolorem aperiam.</p>
+
+      <h2>
+        <small>
+            <strong class="oferta">UDS $100</strong>
+        </small>
+        <small>$10</small>
+    </h2>
+<div class="btn-group pull-left enlace">
+<button type="button" class="btn btn-default btn-xs deseos" idProducto="1" data-toggle="tooltip"
+title="Agregar a mi lista de deseos">
+<i class="fa fa-heart" aria-hidden="true"></i>
+</button>
+
+<button type="button" class="btn btn-default btn-xs deseos" idProducto="404" 
+imagen = "http://localhost/ecommerce_apr/backend/vistas/img/productos/cursos/curso05.jpg" titulo="curso de Bootstrap"
+precio="10" tipo="virtual" pesos="0" data-toggle="tooltip" title="Agregar a mi lista de deseos"> 
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+
+<a href="#" class="pixelProducto">
+<button type="button" class="btn btn-default btn-xs "  data-toggle="tooltip"
+title="Ver Producto">
+<i class="fa fa-eye" aria-hidden="true"></i>
+</button>
+</a>
+
+
+</div>
+
+    </div>
+
+   
+
+
+<!-- =========================================== -->
+
+</li>
+
+</ul>
+
+
+
+
 
 </div>
 
