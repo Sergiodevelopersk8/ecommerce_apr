@@ -1,6 +1,9 @@
 /*=============================================
 PLANTILLA
 =============================================*/
+// Herramienta tooltip
+$('[data-toggle="tooltip"]').tooltip();
+
 
 $.ajax({
 
@@ -65,5 +68,33 @@ var numero = $(this).attr("id").substr(-1);
 }
 
 
+
+// =======================================
+// Efectos con el scroll
+// =======================================
+
+
+$(window).scroll(function(){
+
+	var scrollY = window.pageYOffset;
+
+	if(window.matchMedia("(min-width:768px)").matches){
+	if(scrollY < ($(".banner").offset().top)-200)
+	{
+		$(".banner img").css({"margin-top":-scrollY/2 + "px"})
+	}
+	else{
+		scrollY = 0;
+	}
+}
+
+})
+
+
+$.scrollUp({
+	scrollText:"",
+	scrollSpedd:3000,
+	easingType:"easeOutQuint"
+})
 
 
