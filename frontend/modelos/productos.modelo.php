@@ -45,7 +45,33 @@ class ModeloProductos{
 
     }
 
+/**=================================
+ Mostrar Productos
+ ===================================*/
 
+
+    static public function mdlMostrarProductos($tabla, $ordenar,$item,$valor)
+    {
+        if($item !=null){
+
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item= :$item ORDER BY $ordenar DESC LIMIT 4");
+            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+            $stmt -> execute();
+            return $stmt -> fetchAll();
+           
+
+        }
+        else{
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC LIMIT 4");
+        
+            $stmt -> execute();
+            return $stmt -> fetchAll();
+          
+
+        }
+        $stmt = null;
+       
+    }
 
 
 

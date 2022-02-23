@@ -108,7 +108,7 @@ $ruta = $rutas[0];
     ========================================*/
 
 
-if($ruta!= null)
+if($ruta!= null || $rutas[0]=="articulos-gratis" || $rutas[0]=="lo-mas-vendido" || $rutas[0]=="lo-mas-visto")
 {
 include "modulos/productos.php";
 
