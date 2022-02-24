@@ -34,6 +34,17 @@ static public function ctrMostrarProductos($ordenar,$item,$valor){
 }
 
 
+/**=================================
+ Mostrar Productos info
+ ===================================*/
+static public function ctrMostrarInfoProducto($item, $valor){
+
+$tabla = "productos";
+
+$respuesta = ModeloProductos::mdlMostrarInfoProductos($tabla, $item, $valor);
+return $respuesta;
+
+}
 
 
 }
