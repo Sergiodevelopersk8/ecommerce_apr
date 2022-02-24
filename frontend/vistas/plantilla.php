@@ -63,8 +63,8 @@ PLUGINS CSS Y JS
 
 
 $rutas = array();
-$ruta = "";
-$infoProducto = "";
+$ruta = null;
+$infoProducto = null;
 
 if(isset($_GET["ruta"])){
   
@@ -109,12 +109,22 @@ $ruta = $rutas[0];
     URLS AMIGABLES PRODUCTOS
     ========================================*/
 
+// $rutaProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
+// if($rutas[0] == $rutaProductos['ruta']){
+// $infoProducto = $rutas[0];
+
+// }
+
 $rutaProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
-if($rutas[0]== $rutaProductos["ruta"]){
+foreach($rutaProductos as $key => $value){
+if($rutas[0] == $value["ruta"]){
 $infoProducto = $rutas[0];
 }
+}
 
-    /*=======================================
+
+
+/*=======================================
         LISTA BLANCA DE URLS AMIGABLES
     ========================================*/
 
@@ -124,7 +134,8 @@ if($ruta!= null || $rutas[0]=="articulos-gratis" || $rutas[0]=="lo-mas-vendido" 
 include "modulos/productos.php";
 
 }
-else if($infoProducto !=null){
+else if($infoProducto != null)
+{
     include "modulos/infoproducto.php";
 }
 else{
