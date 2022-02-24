@@ -1,5 +1,23 @@
 <?php 
+if($rutas[0] == "articulos-gratis"){
 
+    $ordenar = "id";
+    $item2 = "precio";
+    $valor2 = 0;
+    $ordenar = "id";
+}
+else if($rutas[0] == "lo-mas-vendido"){
+    $item2 = null;
+    $valor2 = null;
+    $ordenar = "ventas";
+}
+else if($rutas[0] == "lo-mas-visto"){
+    $item2 = null;
+    $valor2 = null;
+    $ordenar = "vistas";
+} 
+else{
+    $ordenar = "id";
 $item1 = "ruta";
 $valor1 = $rutas[0];
 
@@ -15,7 +33,8 @@ else{
     $item2 = "id_categoria";
 $valor2 = $categorias["id"];
 }
-$ordenar = "id";
+}
+
 $base = 0;
  $tope = 12;
 $productos = ControladorProductos::ctrMostrarProductos($ordenar,$item2,$valor2,$base,$tope);
