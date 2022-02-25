@@ -1,10 +1,11 @@
-<!---==========================
-Banner
-===========================------->
 <?php
 $servidor = Ruta::ctrRutaServidor();
 
 ?>
+<!---==========================
+Banner
+===========================------->
+
 <figure class="banner">
 
 <img src="http://localhost/ecommerce_apr/backend/vistas/img/banner/default.jpg" class="img-responsive" width="100%" > 
@@ -16,7 +17,9 @@ $servidor = Ruta::ctrRutaServidor();
 <h3 style="color:#fff">Terminara el 31 de octubre</h3>
 </div>
 </figure>
-
+<!---==========================
+Barra de Productos
+===========================------->
 <?php
 $titulosModulos = array("ARTICULOS GRATUITOS","LO MÁS VENDIDO","LO MÁS VISTOS");
 $rutaModulos = array("articulos-gratis","lo-mas-vendido","lo-mas-visto");

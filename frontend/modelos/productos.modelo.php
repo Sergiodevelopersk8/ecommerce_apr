@@ -63,7 +63,7 @@ class ModeloProductos{
 
         }
         else{
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC LIMIT 4");
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC LIMIT $base, $tope");
         
             $stmt -> execute();
             return $stmt -> fetchAll();
