@@ -95,6 +95,20 @@ $.scrollUp({
 	scrollText:"",
 	scrollSpedd:3000,
 	easingType:"easeOutQuint"
-})
+});
 
+// ================
+// MIGAS DE PAN
+// ===============
+
+
+var pagActiva = $(".pagActiva").html();
+
+if(pagActiva !=null){
+	//la g es para varios
+	var regPagActiva = pagActiva.replace(/-/g, " ");
+	$(".pagActiva").html(regPagActiva);
+	
+	
+}
 
