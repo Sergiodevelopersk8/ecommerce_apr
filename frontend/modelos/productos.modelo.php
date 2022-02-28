@@ -85,7 +85,26 @@ class ModeloProductos{
     }
 
 
+static public function mdlListarProductos($tabla,$ordenar, $item, $valor){
+    if(!null)
+    {
 
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY $ordenar DESC");
+        $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+    $stmt -> execute();
+    return $stmt -> fetchAll();
+  
+    }
+    else{
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ");
+        
+    $stmt -> execute();
+    return $stmt -> fetchAll();
+    
+    }
+    $stmt = null;
+    
+}
 
 
 }

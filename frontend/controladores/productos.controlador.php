@@ -46,5 +46,17 @@ return $respuesta;
 
 }
 
+// =======================
+// LISTA ctrMostrarProductos
+// =========================
+
+static public function ctrListarProductos($ordenar, $item,$valor){
+
+
+    $tabla = "productos";
+    $respuesta = ModeloProductos::mdlListarProductos($tabla, $ordenar,$item, $valor);
+    return $respuesta; 
+
+}
 
 }
