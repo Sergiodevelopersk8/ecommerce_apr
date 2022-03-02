@@ -151,7 +151,7 @@ else{
 
 
 ?>
-
+<input type="hidden"  value =""<?php echo $url;?> id="rutaOculta" name="">
  <!----=========
  JS PERSONALIZADOS
  ==============---->
