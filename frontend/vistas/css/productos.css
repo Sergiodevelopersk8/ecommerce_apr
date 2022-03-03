@@ -24,13 +24,15 @@
 }
 
 .banner .textoCentro{
-    top: 50px;
-    left: 50px;
-    width: 800px;
-    margin-left: -400px;
-    text-align: center;
+	top:50px; 
+	left:50%;
+	width:800px; 
+	margin-left: -400px;
+	text-align:center;}
+    
+.banner #h1banner{
+    color:#FFFFFF;
 }
-
 .textoBanner h1{
     font-size: 35px;
     line-height: 25px;

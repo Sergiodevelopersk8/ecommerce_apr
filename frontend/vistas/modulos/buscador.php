@@ -1,34 +1,3 @@
-<?php
-$servidor = Ruta::ctrRutaServidor();
-$url = Ruta::ctrRuta();
-$ruta = $rutas[0];
-$banner = ControladorProductos::ctrMostrarBanner($ruta);
-
-if($banner !=null){
-    $titulo1 = json_decode($banner["titulo1"],true);
-$titulo2 = json_decode($banner["titulo2"],true);
-$titulo3 = json_decode($banner["titulo3"],true);
-echo '
-<figure class="banner">
-
-<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%" > 
-
-<div class="textoBanner '.$banner["estilo"].'">
-
-<h1 id="h1banner"style="'.$titulo1["color"].'">'.$titulo1["texto"].'</h1>
-<h2 id="h1banner"style="'.$titulo2["color"].'"><strong>'.$titulo2["texto"].'</strong></h2>
-<h3 id="h1banner"style="'.$titulo3["color"].'">'.$titulo3["texto"].'</h3>
-</div>
-</figure>
-';
-}
-?>
-
-
-<!---==========================
-Banner
-===========================------->
-
 
 <!-- BARA DE PRODUCTOS -->
 

@@ -10,6 +10,7 @@
    <title>Box gift</title>
    <?php
 
+ session_start();
 $servidor = Ruta::ctrRutaServidor();
 
    $icono = ControladorPlantilla::ctrEstiloPlantilla();
@@ -138,6 +139,10 @@ else if($infoProducto != null)
 {
     include "modulos/infoproducto.php";
 }
+else if($rutas[0] == "buscador")
+{
+    include "modulos/buscador.php";
+}
 else{
     include "modulos/error404.php";
 }
@@ -158,6 +163,7 @@ else{
 <script src="<?php echo $url;?>vistas/js/cabezote.js"></script>
 <script src="<?php echo $url;?>vistas/js/plantilla.js"></script>
 <script src="<?php echo $url;?>vistas/js/slide.js"></script>
+<script src="<?php echo $url;?>vistas/js/buscador.js"></script>
 
 </body>
 </html>

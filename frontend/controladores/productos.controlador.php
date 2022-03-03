@@ -27,9 +27,9 @@ static public function ctrMostrarCategorias($item, $valor){
  Mostrar Productos
  ===================================*/
 
-static public function ctrMostrarProductos($ordenar,$item,$valor,$base, $tope){
+static public function ctrMostrarProductos($ordenar,$item,$valor,$base, $tope,$modo){
     $tabla = " productos";
-    $respuesta = ModeloProductos::mdlMostrarProductos($tabla,$ordenar,$item,$valor,$base, $tope);
+    $respuesta = ModeloProductos::mdlMostrarProductos($tabla,$ordenar,$item,$valor,$base, $tope,$modo);
     return $respuesta;
 }
 
@@ -58,5 +58,21 @@ static public function ctrListarProductos($ordenar, $item,$valor){
     return $respuesta; 
 
 }
+
+
+
+// =======================
+// LISTA ctrMostrarProductos
+// =========================
+
+static public function ctrMostrarBanner($ruta){
+    $tabla = "banner";
+    $respuesta = ModeloProductos::mdlMostrarBanner($tabla,$ruta);
+    return $respuesta; 
+}
+
+
+
+
 
 }

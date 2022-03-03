@@ -1,22 +1,37 @@
-<?php
-$servidor = Ruta::ctrRutaServidor();
-
-?>
 <!---==========================
 Banner
 ===========================------->
+<?php
+$servidor = Ruta::ctrRutaServidor();
+$ruta = "sin-categoria";
+$banner = ControladorProductos::ctrMostrarBanner($ruta);
 
+$titulo1 = json_decode($banner["titulo1"],true);
+
+$titulo2 = json_decode($banner["titulo2"],true);
+
+$titulo3 = json_decode($banner["titulo3"],true);
+
+if($banner !=null){
+
+
+
+echo '
 <figure class="banner">
 
-<img src="http://localhost/ecommerce_apr/backend/vistas/img/banner/default.jpg" class="img-responsive" width="100%" > 
+<img src="'.$servidor.$banner["img"].'" class="img-responsive" width="100%" > 
 
-<div class="textoBanner textoDer">
+<div class="textoBanner '.$banner["estilo"].'">
 
-<h1 style="color:#fff">OFERTAS ESPECIALES</h1>
-<h2 style="color:#fff"><strong>50% off</strong></h2>
-<h3 style="color:#fff">Terminara el 31 de octubre</h3>
+<h1 id="h1banner" style="'.$titulo1["color"].'">'.$titulo1["texto"].'</h1>
+<h2 id="h1banner" style="'.$titulo2["color"].'"><strong>'.$titulo2["texto"].'</strong></h2>
+<h3  id="h1banner" style="'.$titulo3["color"].'">'.$titulo3["texto"].'</h3>
 </div>
 </figure>
+';
+}
+?>
+
 <!---==========================
 Barra de Productos
 ===========================------->
@@ -25,11 +40,13 @@ $titulosModulos = array("ARTICULOS GRATUITOS","LO MÁS VENDIDO","LO MÁS VISTOS"
 $rutaModulos = array("articulos-gratis","lo-mas-vendido","lo-mas-visto");
 $base = 0;
  $tope = 4;
+ 
 if($titulosModulos [0]=="ARTICULOS GRATUITOS"){
     $ordenar = "id";
     $item = "precio";
     $valor = 0;
-    $gratis = ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor,$base, $tope);
+    $modo = "DESC";
+    $gratis = ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor,$base, $tope,$modo);
 
 }
 
@@ -37,7 +54,8 @@ if($titulosModulos[1]=="LO MÁS VENDIDO"){
     $ordenar = "ventas";
     $item = null;
     $valor = null;
-    $ventas = ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor,$base, $tope);
+    $modo = "DESC";
+    $ventas = ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor,$base, $tope, $modo);
 
 }
 
@@ -46,7 +64,8 @@ if($titulosModulos[2]=="LO MÁS VISTOS"){
     $ordenar = "vistas";
     $item = null;
     $valor = null;
-    $vistas = ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor,$base, $tope);
+    $modo = "DESC";
+    $vistas = ControladorProductos::ctrMostrarProductos($ordenar,$item,$valor,$base, $tope,$modo);
 
 }
 $Modulos=array($gratis,$ventas,$vistas);
