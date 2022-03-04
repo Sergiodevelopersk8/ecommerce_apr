@@ -108,44 +108,16 @@ $modo = "DESC";
 // LLAMADO DE PRODUCTOS A CATEGORIAS , SUBCATEGORIAS Y DESTACADOS
 // ======================
 
-if($rutas[0] == "articulos-gratis"){
+$productos = null;
+$listaProductos= null;
+$ordenar = "id";
+if(isset($rutas[3]) ){
+    $busqueda = $rutas[3];
+    $productos = ControladorProductos::ctrBuscarProductos($busqueda,$ordenar,$modo,$base,$tope);
+    $listaProductos = ControladorProductos::ctrListarProductosBusqueda($busqueda);
+    
+}
 
-    $ordenar = "id";
-    $item2 = "precio";
-    $valor2 = 0;
-    $ordenar = "id";
-}
-else if($rutas[0] == "lo-mas-vendido"){
-    $item2 = null;
-    $valor2 = null;
-    $ordenar = "ventas";
-}
-else if($rutas[0] == "lo-mas-visto"){
-    $item2 = null;
-    $valor2 = null;
-    $ordenar = "vistas";
-} 
-else{
-    $ordenar = "id";
-$item1 = "ruta";
-$valor1 = $rutas[0];
-
-$categorias = ControladorProductos::ctrMostrarCategorias($item1,$valor1);
-
-
-if(!$categorias){
-    $subCategorias = ControladorProductos::ctrMostrarSubCategorias($item1, $valor1);
-    $item2 = "id_subcategoria";
-    $valor2 = $subCategorias[0]["id"];
-}
-else{
-    $item2 = "id_categoria";
-$valor2 = $categorias["id"];
-}
-}
-//$modo = "DESC";
-$productos = ControladorProductos::ctrMostrarProductos($ordenar,$item2,$valor2,$base,$tope,$modo);
-$listaProductos = ControladorProductos::ctrListarProductos($ordenar, $item2,$valor2);
 
 if(!$productos){
     echo '

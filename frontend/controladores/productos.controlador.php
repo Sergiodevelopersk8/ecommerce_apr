@@ -71,6 +71,26 @@ static public function ctrMostrarBanner($ruta){
     return $respuesta; 
 }
 
+// =======================
+// Busqueda Productos
+// =========================
+
+static public function ctrBuscarProductos($busqueda,$ordenar,$modo,$base,$tope){
+    $tabla = "productos";
+    $respuesta = ModeloProductos::mdlBuscarProductos($tabla,$busqueda,$base,$tope,$ordenar,$modo);
+    return $respuesta; 
+}
+
+
+
+// =======================
+// LISTA Productos busqueda
+// =========================
+static public function ctrListarProductosBusqueda($busqueda){
+    $tabla = "banner";
+    $respuesta = ModeloProductos::mdlBuscarListaProductos($tabla,$busqueda);
+    return $respuesta; 
+}
 
 
 

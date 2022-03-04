@@ -114,7 +114,7 @@ BUSCADOR
 <input type="search" name="buscar" class="form-control" placeholder="Buscar....">
 <span class="input-group-btn">
 
-<a href="<?php echo $url;?>buscador">
+<a href="<?php echo $url;?>buscador/1/recientes">
 	<button class="btn btn-default backColor" type="submit">
 		<i class="fa fa-search"> </i>
 	</button>
