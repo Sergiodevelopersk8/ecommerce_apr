@@ -82,6 +82,8 @@ $(window).scroll(function(){
 	var scrollY = window.pageYOffset;
 
 	if(window.matchMedia("(min-width:768px)").matches){
+
+		if($(".banner").html()!=null){
 	if(scrollY < ($(".banner").offset().top)-200)
 	{
 		$(".banner img").css({"margin-top":-scrollY/2 + "px"})
@@ -90,6 +92,7 @@ $(window).scroll(function(){
 		scrollY = 0;
 	}
 }
+	}
 
 })
 
@@ -122,8 +125,19 @@ if(pagActiva !=null){
 
 var url = window.location.href;
 var indice = url.split("/");
-if(indice.pop != "#"){
+console.log("indice",indice);
+var pagActual = indice[6];
 
-	$("#item"+indice.pop()).addClass("active");
+if(isNaN(pagActual)){
+
+	$("#item1").addClass("active");
 }
+else{
+	if(indice.pop != "#"){
+
+		$("#item"+pagActual).addClass("active");
+	}
+	
+}
+
 

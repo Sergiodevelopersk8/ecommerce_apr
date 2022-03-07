@@ -87,7 +87,7 @@ static public function ctrBuscarProductos($busqueda,$ordenar,$modo,$base,$tope){
 // LISTA Productos busqueda
 // =========================
 static public function ctrListarProductosBusqueda($busqueda){
-    $tabla = "banner";
+    $tabla = "productos";
     $respuesta = ModeloProductos::mdlBuscarListaProductos($tabla,$busqueda);
     return $respuesta; 
 }
