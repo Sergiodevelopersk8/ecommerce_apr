@@ -35,6 +35,10 @@ PLUGINS CSS Y JS
    <script src="<?php echo $url;?>vistas/js/plugins/bootstrap.min.js"></script>
    <script src="<?php echo $url;?>vistas/js/plugins/jquery.easing.js"></script>
       <script src="<?php echo $url;?>vistas/js/plugins/jquery.scrollUp.js"></script>
+      <script src="<?php echo $url;?>vistas/js/plugins/jquery.flexslider.js"></script>
+      
+      <script src="<?php echo $url;?>vistas/js/plugins/ infoproducto.js"></script>
+     
 
    <!----=========
  HOJAS DE ESTILOS PERSONALIZADAS
@@ -45,6 +49,10 @@ PLUGINS CSS Y JS
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plantilla.css">
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/cabezote.css">   
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/slide.css">
+   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/flexslider.css">
+   
+   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/infoproducto.css">
+   
    
    
 </head>
