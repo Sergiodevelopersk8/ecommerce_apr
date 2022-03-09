@@ -146,7 +146,7 @@ echo '
 foreach($productos as $key =>$value){
 echo '<li class="col-md-3 col-sm-6 col-xs-12">
 <figure>
-<a href="'.$value["ruta"].'" class="pixelProducto">
+<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 <img src="'.$servidor.$value["portada"].'"
  class="img-responsive">
 
@@ -259,7 +259,7 @@ echo'
 
 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
 <figure>
- <a href="'.$value["ruta"].'" class="pixelProducto">
+ <a href="'.$url.$value["ruta"].'" class="pixelProducto">
      <img src="'.$servidor.$value["portada"].'" 
       class="img-responsive">
  </a>
@@ -345,7 +345,7 @@ else{
 }
 
 echo '
-<a href="'.$value["ruta"].'" class="pixelProducto">
+<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 <button type="button" class="btn btn-default btn-xs" 
 data-toggle="tooltip" title="Ver productos"> 
 <i class="fa fa-eye" aria-hidden="true"></i>

@@ -92,7 +92,18 @@ static public function ctrListarProductosBusqueda($busqueda){
     return $respuesta; 
 }
 
+/*=============================================
+	ACTUALIZAR VISTA PRODUCTO
+	=============================================*/
 
+	static public function ctrActualizarVistaProducto($datos, $item){
+
+		$tabla = "productos";
+
+		$respuesta = ModeloProductos::mdlActualizarVistaProducto($tabla, $datos, $item);
+
+		return $respuesta;
+	}
 
 
 }

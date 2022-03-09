@@ -2,8 +2,8 @@
 PLANTILLA
 =============================================*/
 
-var rutaOculta = $("#rutaOculta").value;
-
+// var rutaOculta = $("#rutaOculta").value;
+var rutaOculta = $("#rutaOculta").val();
 // Herramienta tooltip
 $('[data-toggle="tooltip"]').tooltip();
 
