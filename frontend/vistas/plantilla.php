@@ -37,7 +37,7 @@ PLUGINS CSS Y JS
       <script src="<?php echo $url;?>vistas/js/plugins/jquery.scrollUp.js"></script>
       <script src="<?php echo $url;?>vistas/js/plugins/jquery.flexslider.js"></script>
       
-      <script src="<?php echo $url;?>vistas/js/plugins/ infoproducto.js"></script>
+     
      
 
    <!----=========
@@ -49,7 +49,7 @@ PLUGINS CSS Y JS
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plantilla.css">
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/cabezote.css">   
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/slide.css">
-   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/flexslider.css">
+   <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plugins/flexslider.css">
    
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/infoproducto.css">
    
@@ -172,6 +172,6 @@ else{
 <script src="<?php echo $url;?>vistas/js/plantilla.js"></script>
 <script src="<?php echo $url;?>vistas/js/slide.js"></script>
 <script src="<?php echo $url;?>vistas/js/buscador.js"></script>
-
+<script src="<?php echo $url;?>vistas/js/infoproducto.js"></script>
 </body>
 </html>

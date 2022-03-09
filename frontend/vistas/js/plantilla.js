@@ -125,7 +125,7 @@ if(pagActiva !=null){
 
 var url = window.location.href;
 var indice = url.split("/");
-console.log("indice",indice);
+
 var pagActual = indice[6];
 
 if(isNaN(pagActual)){

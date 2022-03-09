@@ -119,7 +119,13 @@ if(isset($rutas[1])){
         
     }
     else{
-        $modo = $_SESSION["oredenar"];
+
+        if(isset($_SESSION["ordenar"])){
+            $modo = $_SESSION["oredenar"];
+        }
+        else{
+            $modo = "DESC";
+        }
         
     }
 
@@ -198,7 +204,7 @@ echo '
 foreach($productos as $key =>$value){
 echo '<li class="col-md-3 col-sm-6 col-xs-12">
 <figure>
-<a href="'.$value["ruta"].'" class="pixelProducto">
+<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 <img src="'.$servidor.$value["portada"].'"
  class="img-responsive">
 
@@ -210,7 +216,7 @@ echo '<li class="col-md-3 col-sm-6 col-xs-12">
 <h4>
 
 <small>
-<a href="'.$value["ruta"].'" class="pixelProducto">
+<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 
 '.$value["titulo"].' <br> <span style="color:rgba(0,0,0,0);">-</span>';
 
@@ -285,7 +291,7 @@ else{
 }
 
 
-echo '<a href="'.$value["ruta"].'" class="pixelProducto">
+echo '<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 <button type="button" class="btn btn-default btn-xs" 
 data-toggle="tooltip" title="Ver productos"> 
 <i class="fa fa-eye" aria-hidden="true"></i>
@@ -311,7 +317,7 @@ echo'
 
 <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
 <figure>
- <a href="'.$value["ruta"].'" class="pixelProducto">
+ <a href="'.$url.$value["ruta"].'" class="pixelProducto">
      <img src="'.$servidor.$value["portada"].'" 
       class="img-responsive">
  </a>
@@ -323,8 +329,7 @@ echo'
 <div class="col-lg-10 col-md-7 col-sm-8 col-xs-12">
  <h1>
      <small>
-         <a href="'.$value["ruta"].'" class="pixelProducto">
-         <a href="'.$value["ruta"].'" class="pixelProducto">
+         <a href="'.$url.$value["ruta"].'" class="pixelProducto">
 
          '.$value["titulo"].' ';
          
@@ -397,7 +402,7 @@ else{
 }
 
 echo '
-<a href="'.$value["ruta"].'" class="pixelProducto">
+<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 <button type="button" class="btn btn-default btn-xs" 
 data-toggle="tooltip" title="Ver productos"> 
 <i class="fa fa-eye" aria-hidden="true"></i>
