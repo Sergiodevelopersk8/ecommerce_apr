@@ -1,4 +1,8 @@
+<?php
+// $servidor = Ruta::ctrRutaServidor();
+// $url = Ruta::ctrRuta();
 
+?>
 <!-- BARA DE PRODUCTOS -->
 
 <div class="container-fluid  well well-sm barraProductos">
@@ -229,7 +233,7 @@ else{
 }
 
 
-echo '<a href="'.$value["ruta"].'" class="pixelProducto">
+echo '<a href="'.$url.$value["ruta"].'" class="pixelProducto">
 <button type="button" class="btn btn-default btn-xs" 
 data-toggle="tooltip" title="Ver productos"> 
 <i class="fa fa-eye" aria-hidden="true"></i>

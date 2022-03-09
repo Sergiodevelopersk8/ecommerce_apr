@@ -42,7 +42,7 @@ INFOPRODUCTOS
 				$valor = $rutas[0];
 				$infoproducto = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
 foreach ($infoproducto as $key => $value) {
-	# code...
+
 
 				$multimedia = json_decode($value["multimedia"],true);
 
@@ -90,12 +90,15 @@ foreach ($infoproducto as $key => $value) {
 
 					/*=============================================
 					VISOR DE VIDEO
+					<iframe class="videoPresentacion" src="https://www.youtube.com/embed/'.$value["multimedia"].'?rel=0&autoplay=0" width="100%" frameborder="0" allowfullscreen></iframe>
+						watch?v=ShSOxGELOVs
 					=============================================*/
 
 					echo '<div class="col-sm-6 col-xs-12">
 							
-						<iframe class="videoPresentacion" src="https://www.youtube.com/embed/'.$value["multimedia"].'?rel=0&autoplay=0" width="100%" frameborder="0" allowfullscreen></iframe>
-
+							<iframe class="videoPresentacion" src="https://www.youtube.com/embed/'.$value["multimedia"].'?rel=0&autoplay=0" width="100%" frameborder="0" allowfullscreen></iframe>
+					
+							
 					</div>';
 
 				}			
