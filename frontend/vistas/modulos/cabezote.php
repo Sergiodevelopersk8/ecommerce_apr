@@ -245,7 +245,8 @@ VENTANA MODAL PARA EL REGISTRO
 
 						</span>
 
-						<input type="text" class="form-control text-uppercase" id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
+						<input type="text" class="form-control text-uppercase" 
+						id="regUsuario" name="regUsuario" placeholder="Nombre Completo" required>
 
 					</div>
 
@@ -261,7 +262,8 @@ VENTANA MODAL PARA EL REGISTRO
 
 						</span>
 
-						<input type="email" class="form-control" id="regEmail" name="regEmail" placeholder="Correo Electrónico" required>
+						<input type="email" class="form-control" id="regEmail" 
+						name="regEmail" placeholder="Correo Electrónico" required>
 
 					</div>
 
@@ -277,7 +279,8 @@ VENTANA MODAL PARA EL REGISTRO
 
 						</span>
 
-						<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Contraseña" required>
+						<input type="password" class="form-control" id="regPassword" 
+						name="regPassword" placeholder="Contraseña" required>
 
 					</div>
 
@@ -326,8 +329,8 @@ VENTANA MODAL PARA EL REGISTRO
 
 				<?php
 
-				// $registro = new ControladorUsuarios();
-				// $registro -> ctrRegistroUsuario();
+				$registro = new ControladorUsuarios();
+				$registro -> ctrRegistroUsuario();
 
 				?>
 
@@ -434,8 +437,8 @@ VENTANA MODAL PARA EL INGRESO
 				<!-- SECCION DE REGISTRO -->
 				<?php
 
-				// $ingreso = new ControladorUsuarios();
-				// $ingreso -> ctrIngresoUsuario();
+				$ingreso = new ControladorUsuarios();
+				$ingreso -> ctrIngresoUsuario();
 
 				?>
 
@@ -504,8 +507,8 @@ VENTANA MODAL PARA OLVIDO DE CONTRASEÑA
 
 				<?php
 
-				// $password = new ControladorUsuarios();
-				// $password -> ctrOlvidoPassword();
+				$password = new ControladorUsuarios();
+				$password -> ctrOlvidoPassword();
 
 				?>
 
