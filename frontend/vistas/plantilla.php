@@ -34,6 +34,7 @@ PLUGINS CSS Y JS
    <script src="<?php echo $url;?>vistas/js/plugins/jquery.min.js"></script>
    <script src="<?php echo $url;?>vistas/js/plugins/bootstrap.min.js"></script>
    <script src="<?php echo $url;?>vistas/js/plugins/jquery.easing.js"></script>
+   <script src="<?php echo $url;?>vistas/js/plugins/sweetalert.js"></script>
       <script src="<?php echo $url;?>vistas/js/plugins/jquery.scrollUp.js"></script>
       <script src="<?php echo $url;?>vistas/js/plugins/jquery.flexslider.js"></script>
       
@@ -50,6 +51,7 @@ PLUGINS CSS Y JS
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/cabezote.css">   
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/slide.css">
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plugins/flexslider.css">
+    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/plugins/sweetalert.css">
    
    <link rel="stylesheet" href="<?php echo $url;?>vistas/css/infoproducto.css">
    
@@ -174,5 +176,32 @@ else{
 <script src="<?php echo $url;?>vistas/js/buscador.js"></script>
 <script src="<?php echo $url;?>vistas/js/infoproducto.js"></script>
 <script src="<?php echo $url;?>vistas/js/usuarios.js"></script>
+<script src="<?php echo $url; ?>vistas/js/registroFacebook.js"></script>
+
+<!--=====================================
+https://developers.facebook.com/
+======================================-->
+
+<!-- <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '307504983059062',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script> -->
 </body>
 </html>

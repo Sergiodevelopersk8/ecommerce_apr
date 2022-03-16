@@ -23,6 +23,7 @@ class ComposerStaticInit442b75af0f752c574d9252c58b6f9c6c
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Cache\\' => 10,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
         array (
@@ -58,6 +59,10 @@ class ComposerStaticInit442b75af0f752c574d9252c58b6f9c6c
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -85,13 +90,6 @@ class ComposerStaticInit442b75af0f752c574d9252c58b6f9c6c
     );
 
     public static $prefixesPsr0 = array (
-        'P' => 
-        array (
-            'PayPal' => 
-            array (
-                0 => __DIR__ . '/..' . '/paypal/rest-api-sdk-php/lib',
-            ),
-        ),
         'G' => 
         array (
             'Google_Service_' => 
@@ -106,6 +104,7 @@ class ComposerStaticInit442b75af0f752c574d9252c58b6f9c6c
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Google\\Auth\\ApplicationDefaultCredentials' => __DIR__ . '/..' . '/google/auth/src/ApplicationDefaultCredentials.php',
         'Google\\Auth\\CacheTrait' => __DIR__ . '/..' . '/google/auth/src/CacheTrait.php',
         'Google\\Auth\\CredentialsLoader' => __DIR__ . '/..' . '/google/auth/src/CredentialsLoader.php',
