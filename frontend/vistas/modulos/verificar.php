@@ -3,14 +3,14 @@ VERIFICAR
 ======================================-->
 
 <?php
-
-	$usuarioVerificado = false;
+$url = Ruta::ctrRuta();
+$usuarioVerificado = false;
 	
 	$item = "EmailEncriptado";
 	$valor =  $rutas[1];
 
 	$respuesta = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
-
+if(is_array($valor)|| is_array($respuesta)){
 	if($valor == $respuesta["emailEncriptado"]){
 
 		$id = $respuesta["id"];
@@ -26,7 +26,7 @@ VERIFICAR
 		}
 
 	}
-		
+}	
 
 ?>
 
@@ -66,6 +66,6 @@ VERIFICAR
 		</div>
 
 	</div>
-
+	<script src="<?php echo $url;?>vistas/js/usuarios.js"></script>
 </div>
 
