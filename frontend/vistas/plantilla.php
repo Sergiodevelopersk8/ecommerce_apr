@@ -34,7 +34,7 @@ PLUGINS CSS Y JS
    <script src="<?php echo $url;?>vistas/js/plugins/jquery.min.js"></script>
    <script src="<?php echo $url;?>vistas/js/plugins/bootstrap.min.js"></script>
    <script src="<?php echo $url;?>vistas/js/plugins/jquery.easing.js"></script>
-   <script src="<?php echo $url;?>vistas/js/plugins/sweetalert.js"></script>
+   <script src="<?php echo $url;?>vistas/js/plugins/sweetalert.min.js"></script>
       <script src="<?php echo $url;?>vistas/js/plugins/jquery.scrollUp.js"></script>
       <script src="<?php echo $url;?>vistas/js/plugins/jquery.flexslider.js"></script>
       
@@ -180,6 +180,7 @@ else{
 
 <!--=====================================
 https://developers.facebook.com/
+
 ======================================-->
 
 <!-- <script>

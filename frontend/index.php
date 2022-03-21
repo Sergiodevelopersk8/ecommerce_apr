@@ -14,6 +14,12 @@ require_once  "modelos/usuarios.modelo.php";
 //require_once  "modelos/notificaciones.modelo.php";
 require_once "extensiones/PHPMailer/PHPMailerAutoload.php";
 require_once "extensiones/vendor/autoload.php";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+/*require 'path/to/PHPMailer/src/Exception.php';*/
+// require 'path/to/PHPMailer/src/PHPMailer.php';
+// require 'path/to/PHPMailer/src/SMTP.php';
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> plantilla();
