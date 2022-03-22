@@ -137,12 +137,85 @@ REGISTRO
 			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 registro ">
 
 				<ul>
-					<li>
-						<a href="#modalIngreso" data-toggle="modal">Ingresar </a>
-					</li>
-					<li> | </li>
-					<li><a href="#modalRegistro" data-toggle="modal">Crear cuenta</a></li>
+					<?php
+					
+					if(isset($_SESSION["validarSesion"])){
 
+						if($_SESSION["validarSesion"] == "ok"){
+	
+							if($_SESSION["modo"] == "directo"){
+	
+								if($_SESSION["foto"] != ""){
+	
+									echo '<li>
+	
+											<img class="img-circle" src="'.$url.$_SESSION["foto"].'" width="10%">
+	
+										 </li>';
+	
+								}else{
+	
+									echo '<li>
+	
+										<img class="img-circle" src="'.$servidor.'vistas/img/usuarios/default/anonymous.png" width="10%">
+	
+									</li>';
+	
+								}
+	
+								echo '<li>|</li>
+								 <li><a href="'.$url.'perfil">Ver Perfil</a></li>
+								 <li>|</li>
+								 <li><a href="'.$url.'salir">Salir</a></li>';
+	
+	
+							}
+	
+							if($_SESSION["modo"] == "facebook"){
+	
+								echo '<li>
+	
+										<img class="img-circle" src="'.$_SESSION["foto"].'" width="10%">
+	
+									   </li>
+									   <li>|</li>
+										<li><a href="'.$url.'perfil">Ver Perfil</a></li>
+										<li>|</li>
+										<li><a href="'.$url.'salir" class="salir">Salir</a></li>';
+	
+							}
+	
+							if($_SESSION["modo"] == "google"){
+	
+								echo '<li>
+	
+										<img class="img-circle" src="'.$_SESSION["foto"].'" width="10%">
+	
+									   </li>
+									   <li>|</li>
+										<li><a href="'.$url.'perfil">Ver Perfil</a></li>
+										<li>|</li>
+										<li><a href="'.$url.'salir">Salir</a></li>';
+	
+							}
+	
+						}
+	
+					}else{
+	
+						echo '<li><a href="#modalIngreso" data-toggle="modal">Ingresar</a></li>
+							  <li>|</li>
+							  <li><a href="#modalRegistro" data-toggle="modal">Crear una cuenta</a></li>';
+	
+					}
+	
+						
+
+
+					
+					
+					?>
+					
 				</ul>
 
 
@@ -291,19 +364,19 @@ VENTANA MODAL PARA EL REGISTRO
 
 			<div class="col-sm-6 col-xs-12 facebook">
 
-				<p>
+				 <p>
 					<i class="fa fa-facebook"></i>
 					Registro con Facebook
-				</p>
+				</p> 
 
-			</div>
+			</div> 
 
 			<!--=====================================
 			REGISTRO GOOGLE
 			======================================-->
-			<a href="<?php /*echo $rutaGoogle;*/ ?>">
+			 <a href="<?php echo $rutaGoogle; ?>"> 
 
-				<div class="col-sm-6 col-xs-12 google">
+			 <div class="col-sm-6 col-xs-12 google">
 
 					<p>
 						<i class="fa fa-google"></i>
@@ -311,7 +384,7 @@ VENTANA MODAL PARA EL REGISTRO
 					</p>
 
 				</div>
-			</a>
+			</a> 
 
 			<!--=====================================
 			REGISTRO DIRECTO
@@ -466,7 +539,7 @@ VENTANA MODAL PARA EL INGRESO
 			<!--=====================================
 			INGRESO GOOGLE
 			======================================-->
-			<a href="<?php /*echo $rutaGoogle;*/ ?>">
+			<a href="<?php echo $rutaGoogle; ?>">
 
 				<div class="col-sm-6 col-xs-12 google">
 
