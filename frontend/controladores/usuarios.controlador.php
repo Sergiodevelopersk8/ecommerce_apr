@@ -327,11 +327,11 @@ class ControladorUsuarios{
 					$key = "";
 					$pattern = "1234567890abcdefghijklmnopqrstuvwxyz";
 
-					$max = strlen($pattern)-1;
+					$max = strlen($pattern);
 
 					for($i = 0; $i < $longitud; $i++){
-
-					//$key .= $pattern{mt_rand(0,$max)};
+					
+					$key .= substr($pattern, mt_rand(0,$max), 1);
 
 					}
 
@@ -364,7 +364,7 @@ class ControladorUsuarios{
 						CAMBIO DE CONTRASEÑA
 						=============================================*/
 
-						date_default_timezone_set("America/Bogota");
+						date_default_timezone_set("America/Mexico_City");
 
 						$url = Ruta::ctrRuta();	
 
@@ -374,9 +374,9 @@ class ControladorUsuarios{
 
 						$mail->isMail();
 
-						$mail->setFrom('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+						$mail->setFrom('DrawHannelius17@hotmail.com', 'Tutoriales a tu Alcance');
 
-						$mail->addReplyTo('cursos@tutorialesatualcance.com', 'Tutoriales a tu Alcance');
+						$mail->addReplyTo('DrawHannelius17@hotmail.com', 'Tutoriales a tu Alcance');
 
 						$mail->Subject = "Solicitud de nueva contraseña";
 

@@ -149,7 +149,7 @@ else if($infoProducto != null)
 {
     include "modulos/infoproducto.php";
 }
-else if($rutas[0] == "buscador" || $rutas[0] == "verificar")
+else if($rutas[0] == "buscador" || $rutas[0] == "verificar" || $rutas[0] == "salir")
 {
     include "modulos/".$rutas[0].".php";
 }
@@ -183,10 +183,11 @@ https://developers.facebook.com/
 
 ======================================-->
 
-<!-- <script>
+
+<script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '307504983059062',
+      appId      : '643688483362068',
       cookie     : true,
       xfbml      : true,
       version    : 'v2.10'
@@ -203,6 +204,6 @@ https://developers.facebook.com/
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-</script> -->
+</script>
 </body>
 </html>
