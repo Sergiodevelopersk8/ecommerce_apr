@@ -11,6 +11,7 @@ class Ruta{
 
 
    static public function ctrRuta(){
+        //return "https://localhost/ecommerce_apr/frontend/";
         return "http://localhost/ecommerce_apr/frontend/";
     }
 
@@ -21,6 +22,7 @@ class Ruta{
 
 static public function ctrRutaServidor(){
 
+    //return "https://localhost/ecommerce_apr/backend/";
     return "http://localhost/ecommerce_apr/backend/";
 }
 

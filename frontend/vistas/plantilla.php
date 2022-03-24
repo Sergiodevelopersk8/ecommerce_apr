@@ -149,7 +149,7 @@ else if($infoProducto != null)
 {
     include "modulos/infoproducto.php";
 }
-else if($rutas[0] == "buscador" || $rutas[0] == "verificar" || $rutas[0] == "salir")
+else if($rutas[0] == "buscador" || $rutas[0] == "verificar" || $rutas[0] == "salir" || $rutas[0]== "perfil" )
 {
     include "modulos/".$rutas[0].".php";
 }
@@ -180,7 +180,7 @@ else{
 
 <!--=====================================
 https://developers.facebook.com/
-
+'v13.0'
 ======================================-->
 
 

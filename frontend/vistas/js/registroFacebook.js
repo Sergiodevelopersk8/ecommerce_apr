@@ -80,12 +80,16 @@ function testApi(){
 	            } 
 	      	});
 
-		}else{
+		}
+		/*"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid="+response.id+"&height=50&width=50&ext=1650683661&hash=AeR7yEEw3kRWn3iCCxQ";
+			"http://graph.facebook.com/"+response.id+"/picture?type=large"; */
+		else
+		{
 
 			var email = response.email;
 			var nombre = response.name;
 			var foto = "http://graph.facebook.com/"+response.id+"/picture?type=large";
-
+			
 			var datos = new FormData();
 			datos.append("email", email);
 			datos.append("nombre",nombre);
