@@ -22,6 +22,23 @@ class AjaxProductos{
 
 	}
 
+/*=============================================
+	TRAER EL PRODUCTO DE ACUERDO AL ID
+	=============================================*/
+
+	public $id;
+
+	public function ajaxTraerProducto(){
+
+		$item = "id";
+		$valor = $this->id;
+
+		$respuesta = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
+
+		echo json_encode($respuesta);
+	}
+
+
 }
 
 if(isset($_POST["valor"])){
@@ -35,5 +52,16 @@ if(isset($_POST["valor"])){
 
 }
 
+
+if(isset($_POST["id"])){
+
+	$producto = new AjaxProductos();
+	$producto -> id = $_POST["id"];
+	$producto -> ajaxTraerProducto();
+
+}
+
+
+ 
 
  

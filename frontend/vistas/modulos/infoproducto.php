@@ -184,6 +184,50 @@ foreach ($infoproducto as $key => $value) {
 
 				<?php
 
+echo '<div class="comprarAhora" style="display:none">
+
+
+	<button class="btn btn-default backColor quitarItemCarrito" idProducto="'.$value["id"].'" peso="'.$value["peso"].'"></button>
+
+	<p class="tituloCarritoCompra text-left">'.$value["titulo"].'</p>';
+
+
+	if($value["oferta"] == 0){
+
+		echo'<input class="cantidadItem" value="1" tipo="'.$value["tipo"].'" precio="'.$value["precio"].'" idProducto="'.$value["id"].'">
+
+		<p class="subTotal'.$value["id"].' subtotales">
+	
+			<strong>USD $<span>'.$value["precio"].'</span></strong>
+
+		</p>
+
+		<div class="sumaSubTotal"><span>'.$value["precio"].'</span></div>';
+
+
+	}else{
+
+		echo'<input class="cantidadItem" value="1" tipo="'.$value["tipo"].'" precio="'.$value["precioOferta"].'" idProducto="'.$value["id"].'">
+
+		<p class="subTotal'.$value["id"].' subtotales">
+	
+			<strong>USD $<span>'.$value["precioOferta"].'</span></strong>
+
+		</p>
+
+		<div class="sumaSubTotal"><span>'.$value["precioOferta"].'</span></div>';
+
+
+	}
+
+
+
+
+
+
+echo '</div>';
+
+
 					/*=============================================
 					TITULO
 					=============================================*/				
@@ -243,6 +287,84 @@ foreach ($infoproducto as $key => $value) {
 
 						}
 					}
+
+
+/*=============================================
+					TITULO
+					=============================================*/				
+					
+					if($value["oferta"] == 0){
+
+						$fecha = date('Y-m-d');
+						$fechaActual = strtotime('-30 day', strtotime($fecha));
+						$fechaNueva = date('Y-m-d', $fechaActual);
+
+						if($fechaNueva > $value["fecha"]){
+
+							echo '<h1 class="text-muted text-uppercase">'.$value["titulo"].'</h1>';
+
+						}else{
+
+							echo '<h1 class="text-muted text-uppercase">'.$value["titulo"].'
+
+							<br>
+
+							<small>
+						
+								<span class="label label-warning">Nuevo</span>
+
+							</small>
+
+							</h1>';
+
+						}
+
+					}else{
+
+						$fecha = date('Y-m-d');
+						$fechaActual = strtotime('-30 day', strtotime($fecha));
+						$fechaNueva = date('Y-m-d', $fechaActual);
+
+						if($fechaNueva > $value["fecha"]){
+
+							echo '<h1 class="text-muted text-uppercase">'.$value["titulo"].'
+
+							<br>';
+
+							if($value["precio"] != 0){
+
+								echo '<small>
+							
+									<span class="label label-warning">'.$value["descuentoOferta"].'% off</span>
+
+								</small>';
+
+							}
+							
+							echo '</h1>';
+
+						}else{
+
+							echo '<h1 class="text-muted text-uppercase">'.$value["titulo"].'
+
+							<br>';
+
+							if($value["precio"] != 0){
+
+								echo '<small>
+									<span class="label label-warning">Nuevo</span> 
+									<span class="label label-warning">'.$value["descuentoOferta"].'% off</span> 
+
+								</small>';
+
+							}
+							
+							echo '</h1>';
+
+						}
+					}
+
+
 
 					/*=============================================
 					TITULO
@@ -563,64 +685,120 @@ foreach ($infoproducto as $key => $value) {
 
 				<?php
 
-					if($value["precio"]==0){
+if($value["precio"]==0){
 
-						echo '<div class="col-md-6 col-xs-12">';
+	echo '<div class="col-md-6 col-xs-12">';
 
-							if($value["tipo"]=="virtual"){
-						
-								echo '<button class="btn btn-default btn-block btn-lg backColor">ACCEDER AHORA</button>';
+	if(isset($_SESSION["validarSesion"]) && $_SESSION["validarSesion"] == "ok"){
 
-							}else{
+		if($value["tipo"]=="virtual"){
+	
+			echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="'.$value["id"].'" idUsuario="'.$_SESSION["id"].'" tipo="'.$value["tipo"].'" titulo="'.$value["titulo"].'">ACCEDER AHORA</button>';
 
-								echo '<button class="btn btn-default btn-block btn-lg backColor">SOLICITAR AHORA</button>';
+		}else{
 
-							}
+			echo '<button class="btn btn-default btn-block btn-lg backColor agregarGratis" idProducto="'.$value["id"].'" idUsuario="'.$_SESSION["id"].'" tipo="'.$value["tipo"].'" titulo="'.$value["titulo"].'">SOLICITAR AHORA</button>
 
-							echo '</div>';
+				<br>
 
-					}else{
+				<div class="col-xs-12 panel panel-info text-left">
 
-						if($value["tipo"]=="virtual"){
+				<strong>¡Atención!</strong>
 
-							echo '<div class="col-md-6 col-xs-12">
-							
-									<button class="btn btn-default btn-block btn-lg">
-									<small>COMPRAR AHORA</small></button>
+					El producto a solicitar es totalmente gratuito y se enviará a la dirección solicitada, sólo se cobrará los cargos de envío.
 
-								</div>
+				</div>
+			';
 
-								<div class="col-md-6 col-xs-12">
-									
-									<button class="btn btn-default btn-block btn-lg backColor">
+		}
 
-									<small>ADICIONAR AL CARRITO</small> 
+	}else{
 
-									<i class="fa fa-shopping-cart col-md-0"></i>
+		echo '<a href="#modalIngreso" data-toggle="modal">
 
-									</button>
+			<button class="btn btn-default btn-block btn-lg backColor">	SOLICITAR AHORA</button>
 
-								</div>';
-						}else{
+		</a>';
 
-							echo '<div class="col-lg-6 col-md-8 col-xs-12">
-									
-									<button class="btn btn-default btn-block btn-lg backColor">
+	}
 
-									ADICIONAR AL CARRITO 
+	echo '</div>';
 
-									<i class="fa fa-shopping-cart"></i>
+}else{
 
-									</button>
+	if($value["tipo"]=="virtual"){
 
-								</div>';
+		echo '<div class="col-md-6 col-xs-12">';
 
-						}
+		if(isset($_SESSION["validarSesion"])){
 
-					}
+			if($_SESSION["validarSesion"] == "ok"){
 
-				?>
+				echo '<a id="btnCheckout" href="#modalComprarAhora" data-toggle="modal" idUsuario="'.$_SESSION["id"].'"><button class="btn btn-default btn-block btn-lg">
+				<small>COMPRAR AHORA</small></button></a>';
 
+			}
+
+		}else{
+
+			echo '<a href="#modalIngreso" data-toggle="modal"><button class="btn btn-default btn-block btn-lg">
+				<small>COMPRAR AHORA</small></button></a>';
+
+		}
+
+		echo '</div>
+
+			<div class="col-md-6 col-xs-12">';
+
+			if($value["oferta"] != 0){
+				
+				echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'">';
+
+			}else{
+
+				echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'">';
+
+
+			}
+
+			echo   '<small>ADICIONAR AL CARRITO</small> 
+
+				<i class="fa fa-shopping-cart col-md-0"></i>
+
+				</button>
+
+			</div>';
+	}else{
+
+		echo '<div class="col-lg-6 col-md-8 col-xs-12">';
+
+		if($value["oferta"] != 0){
+				
+				echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'">';
+
+			}else{
+
+				echo '<button class="btn btn-default btn-block btn-lg backColor agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'">';
+
+			}
+
+
+				echo 'ADICIONAR AL CARRITO 
+
+				<i class="fa fa-shopping-cart"></i>
+
+				</button>
+
+			</div>';
+
+	}
+
+}
+
+?>
+
+
+				
 				</div>
 				
 				<!--=====================================
@@ -645,147 +823,321 @@ foreach ($infoproducto as $key => $value) {
 
 		<div class="row">
 			
-			<ul class="nav nav-tabs">
+		<?php
+	//$infoproducto = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
+	
+			$datos = array("idUsuario"=>"",					  
+			"idProducto"=>$value["id"]);
 				
-					<li class="active"><a>COMENTARIOS 22</a></li>
-					<li><a href="">Ver más</a></li>
-					<li class="pull-right"><a class="text-muted">PROMEDIO DE CALIFICACIÓN: 3.5 | 
 
-						<i class="fa fa-star text-success"></i>
-						<i class="fa fa-star text-success"></i>
-						<i class="fa fa-star text-success"></i>
-						<i class="fa fa-star-half-o text-success"></i>
-						<i class="fa fa-star-o text-success"></i>
+			$comentarios = ControladorUsuarios::ctrMostrarComentariosPerfil($datos);
+			$cantidad = 0;
+
+			foreach ($comentarios as $key => $value){
+				
+				if($value["comentario"] != ""){
+
+					$cantidad = $value["id"];
 					
-					</a></li>
+
+				}
+			}
+
+			?>
+			
+			<ul class="nav nav-tabs">
+
+			<?php
+
+				$cantidadCalificacion = 0;
+
+				if($cantidad == 0){
+
+					echo '<li class="active"><a>ESTE PRODUCTO NO TIENE COMENTARIOS</a></li>
+						  <li></li>';
+
+				}else{
+
+					echo '<li class="active"><a>COMENTARIOS '.$cantidad.'</a></li>
+						  <li><a id="verMas" href="">Ver más</a></li>';
+
+
+					$sumaCalificacion = 0;
+
+					foreach ($comentarios as $key => $value){
+
+						if($value["calificacion"] != 0){
+
+							//$cantidadCalificacion += count($value["id"]);
+							$cantidadCalificacion = $value["id"];
+
+							$sumaCalificacion += $value["calificacion"];
+
+						}
+
+					}
+
+					$promedio = round($sumaCalificacion/$cantidadCalificacion,1);
+
+					echo '<li class="pull-right"><a class="text-muted">PROMEDIO DE CALIFICACIÓN: '.$promedio.' | ';
+
+					if($promedio >= 0 && $promedio < 0.5){
+
+						echo '<i class="fa fa-star-half-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>';
+
+					}
+
+					else if($promedio >= 0.5 && $promedio < 1){
+
+						echo '<i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>';
+
+					}
+
+					else if($promedio >= 1 && $promedio < 1.5){
+
+						echo '<i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star-half-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>';
+
+					}
+
+					else if($promedio >= 1.5 && $promedio < 2){
+
+						echo '<i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>';
+
+					}
+
+					else if($promedio >= 2 && $promedio < 2.5){
+
+						echo '<i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star-half-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>';
+
+					}
+
+					else if($promedio >= 2.5 && $promedio < 3){
+
+						echo '<i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>';
+
+					}
+
+					else if($promedio >= 3 && $promedio < 3.5){
+
+						echo '<i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star-half-o text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>';
+
+					}
+
+					else if($promedio >= 3.5 && $promedio < 4){
+
+						echo '<i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star-o text-success"></i>';
+
+					}
+
+					else if($promedio >= 4 && $promedio < 4.5){
+
+						echo '<i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star-half-o text-success"></i>';
+
+					}else{
+
+						echo '<i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>
+							  <i class="fa fa-star text-success"></i>';
+
+					}
+
+
+				}
+
+
+			?>
+
+					
+				</a></li>
 
 			</ul>
 
 			<br>
+	
+
 
 		</div>
 
 		<div class="row comentarios">
+		<?php
+
+foreach ($comentarios as $key => $value) {
+	
+	if($value["comentario"] != ""){
+
+		$item = "id";
+		$valor = $value["id_usuario"];
+
+		$usuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
+
+		echo '<div class="panel-group col-md-3 col-sm-6 col-xs-12 alturaComentarios">
+		
+			<div class="panel panel-default">
+			  
+			  <div class="panel-heading text-uppercase">
+
+				  '.$usuario["nombre"].'
+				  <span class="text-right">';
+
+				  if($usuario["modo"] == "directo"){
+
+					  if($usuario["foto"] == ""){
+
+						  echo '<img class="img-circle pull-right" src="'.$servidor.'vistas/img/usuarios/default/anonymous.png" width="20%">';	
+
+					  }else{
+
+						  echo '<img class="img-circle pull-right" src="'.$url.$usuario["foto"].'" width="20%">';	
+
+					  }
+				  
+				  }else{
+
+					  echo '<img class="img-circle pull-right" src="'.$usuario["foto"].'" width="20%">';	
+
+				  }
+
+				  echo '</span>
+
+			  </div>
+			 
+			  <div class="panel-body"><small>'.$value["comentario"].'</small></div>
+
+			  <div class="panel-footer">';
+				  
+				  switch($value["calificacion"]){
+
+					case 0.5:
+					echo '<i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+					break;
+
+					case 1.0:
+					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+					break;
+
+					case 1.5:
+					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+					break;
+
+					case 2.0:
+					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+					break;
+
+					case 2.5:
+					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+					break;
+
+					case 3.0:
+					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+					break;
+
+					case 3.5:
+					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+					break;
+
+					case 4.0:
+					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-o text-success" aria-hidden="true"></i>';
+					break;
+
+					case 4.5:
+					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star-half-o text-success" aria-hidden="true"></i>';
+					break;
+
+					case 5.0:
+					echo '<i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>
+						  <i class="fa fa-star text-success" aria-hidden="true"></i>';
+					break;
+
+				}
+
+			  echo '</div>
 			
-			<div class="panel-group col-md-3 col-sm-6 col-xs-12">
-				
-				<div class="panel panel-default">
-			      
-			      <div class="panel-heading text-uppercase">
-
-			      	Andrés Felipe
-			      	<span class="text-right">
-			      		<img class="img-circle" src="<?php echo $url; ?>vistas/img/usuarios/40/944.jpg" width="20%">
-
-			      	</span>
-
-			      </div>
-			     
-			      <div class="panel-body"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro omnis molestias consequuntur quaerat illo aliquid, commodi iste quam laboriosam quas voluptate tempore distinctio dolore dolorem, ut, minus vitae unde optio.</small></div>
-
-			      <div class="panel-footer">
-			      	
-			      	<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star-half-o text-success"></i>
-					<i class="fa fa-star-o text-success"></i>
-
-			      </div>
-			    
-			    </div>
-
 			</div>
 
-			<div class="panel-group col-md-3 col-sm-6 col-xs-12">
-				
-				<div class="panel panel-default">
-			      
-			      <div class="panel-heading text-uppercase">
+		</div>';
 
-			      	Andrés Felipe
-			      	<span class="text-right">
-			      		<img class="img-circle" src="<?php echo $url; ?>vistas/img/usuarios/40/944.jpg" width="20%">
+	}
+}
 
-			      	</span>
+?>
 
-			      </div>
-			     
-			      <div class="panel-body"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro omnis molestias consequuntur quaerat illo aliquid, commodi iste quam laboriosam quas voluptate tempore distinctio dolore dolorem, ut, minus vitae unde optio.</small></div>
-
-			      <div class="panel-footer">
-			      	
-			      	<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star-half-o text-success"></i>
-					<i class="fa fa-star-o text-success"></i>
-
-			      </div>
-			    
-			    </div>
-
-			</div>
-
-			<div class="panel-group col-md-3 col-sm-6 col-xs-12">
-				
-				<div class="panel panel-default">
-			      
-			      <div class="panel-heading text-uppercase">
-
-			      	Andrés Felipe
-			      	<span class="text-right">
-			      		<img class="img-circle" src="<?php echo $url; ?>vistas/img/usuarios/40/944.jpg" width="20%">
-
-			      	</span>
-
-			      </div>
-			     
-			      <div class="panel-body"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro omnis molestias consequuntur quaerat illo aliquid, commodi iste quam laboriosam quas voluptate tempore distinctio dolore dolorem, ut, minus vitae unde optio.</small></div>
-
-			      <div class="panel-footer">
-			      	
-			      	<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star-half-o text-success"></i>
-					<i class="fa fa-star-o text-success"></i>
-
-			      </div>
-			    
-			    </div>
-
-			</div>
-
-			<div class="panel-group col-md-3 col-sm-6 col-xs-12">
-				
-				<div class="panel panel-default">
-			      
-			      <div class="panel-heading text-uppercase">
-
-			      	Andrés Felipe
-			      		<span class="text-right">
-			      			<img class="img-circle" src="<?php echo $url; ?>vistas/img/usuarios/40/944.jpg" width="20%">
-
-			      		</span>
-
-			      </div>
-			     
-			      <div class="panel-body"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro omnis molestias consequuntur quaerat illo aliquid, commodi iste quam laboriosam quas voluptate tempore distinctio dolore dolorem, ut, minus vitae unde optio.</small></div>
-
-			      <div class="panel-footer">
-			      	
-			      	<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star text-success"></i>
-					<i class="fa fa-star-half-o text-success"></i>
-					<i class="fa fa-star-o text-success"></i>
-
-			      </div>
-			    
-			    </div>
-
-			</div>
 		
 		</div>
 
@@ -817,10 +1169,15 @@ ARTÏCULOS RELACIONADOS
 				<?php
 
 					$item = "id";
-					$valor = $value["id_subcategoria"];
+					foreach ($infoproducto as $key => $infoproducto1) {
+						$valor = $infoproducto1["id_subcategoria"];
+					}
+					
 
 					$rutaArticulosDestacados = ControladorProductos::ctrMostrarSubcategorias($item, $valor);
 
+	
+if(is_array($rutaArticulosDestacados) && $rutaArticulosDestacados !=null){
 					echo '<a href="'.$url.$rutaArticulosDestacados[0]["ruta"].'">
 						
 						<button class="btn btn-default backColor pull-right">
@@ -830,7 +1187,8 @@ ARTÏCULOS RELACIONADOS
 						</button>
 
 					</a>';
-
+//}
+}
 				?>
 
 				</div>
@@ -847,7 +1205,10 @@ ARTÏCULOS RELACIONADOS
 
 			$ordenar = "";
 			$item = "id_subcategoria";
-			$valor = $value["id_subcategoria"];
+			foreach ($infoproducto as $key => $infoproducto2) {
+				$valor = $infoproducto2["id_subcategoria"];
+			}
+			//$valor = $value["id_subcategoria"];
 			$base = 0;
 			$tope = 4;
 			$modo = "Rand()";
@@ -864,7 +1225,8 @@ ARTÏCULOS RELACIONADOS
 
 				</div>';
 
-			}else{
+			}
+			else{
 
 				echo '<ul class="grid0">';
 
@@ -891,6 +1253,15 @@ ARTÏCULOS RELACIONADOS
 									'.$value["titulo"].'<br>
 
 									<span style="color:rgba(0,0,0,0)">-</span>';
+									$fecha = date('Y-m-d');
+									$fechaActual = strtotime('-30 day', strtotime($fecha));
+									$fechaNueva = date('Y-m-d', $fechaActual);
+
+									if($fechaNueva < $value["fecha"]){
+
+										echo '<span class="label label-warning fontSize">Nuevo</span> ';
+
+									}
 
 									if($value["nuevo"] != 0){
 
@@ -898,7 +1269,12 @@ ARTÏCULOS RELACIONADOS
 
 									}
 
-									if($value["oferta"] != 0){
+									// if($value["oferta"] != 0){
+
+									// 	echo '<span class="label label-warning fontSize">'.$value["descuentoOferta"].'% off</span>';
+
+									// }
+									if($value["oferta"] != 0 && $value["precio"] != 0){
 
 										echo '<span class="label label-warning fontSize">'.$value["descuentoOferta"].'% off</span>';
 
@@ -946,9 +1322,10 @@ ARTÏCULOS RELACIONADOS
 							
 							<div class="btn-group pull-right">
 								
-								<button type="button" class="btn btn-default btn-xs deseos" idProducto="'.$value["id"].'" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+				<button type="button" class="btn btn-default btn-xs deseos" 
+				idProducto="'.$value["id"].'" data-toggle="tooltip" title="Agregar a mi lista de deseos">
 									
-									<i class="fa fa-heart" aria-hidden="true"></i>
+				<i class="fa fa-heart" aria-hidden="true"></i>
 
 								</button>';
 
@@ -956,7 +1333,15 @@ ARTÏCULOS RELACIONADOS
 
 									if($value["oferta"] != 0){
 
-										echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+										echo '<button type="button"
+										 class="btn btn-default btn-xs agregarCarrito" 
+										  idProducto="'.$value["id"].'
+										  " imagen="'.$servidor.$value["portada"].'
+										  " titulo="'.$value["titulo"].'
+										  " precio="'.$value["precioOferta"].'
+										  " tipo="'.$value["tipo"].'
+										  " peso="'.$value["peso"].'
+										  " data-toggle="tooltip" title="Agregar al carrito de compras">
 
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -964,7 +1349,15 @@ ARTÏCULOS RELACIONADOS
 
 									}else{
 
-										echo '<button type="button" class="btn btn-default btn-xs agregarCarrito"  idProducto="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+										echo '<button type="button" class="btn btn-default btn-xs agregarCarrito" 
+										 idProducto="'.$value["id"].'
+										 " imagen="'.$servidor.$value["portada"].'
+										 " titulo="'.$value["titulo"].'
+										 " precio="'.$value["precio"].'
+										 " tipo="'.$value["tipo"].'
+										 " peso="'.$value["peso"].'
+										 " data-toggle="tooltip"
+										  title="Agregar al carrito de compras">
 
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -1000,3 +1393,243 @@ ARTÏCULOS RELACIONADOS
 	</div>
 
 </div>
+
+
+
+<!--=====================================
+VENTANA MODAL PARA CHECKOUT
+======================================-->
+
+<div id="modalComprarAhora" class="modal fade modalFormulario" role="dialog">
+	
+	 <div class="modal-content modal-dialog">
+	 	
+		<div class="modal-body modalTitulo">
+			
+			<h3 class="backColor">REALIZAR PAGO</h3>
+
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+			<div class="contenidoCheckout">
+
+				<?php
+
+				$respuesta = ControladorCarrito::ctrMostrarTarifas();
+
+				echo '<input type="hidden" id="tasaImpuesto" value="'.$respuesta["impuesto"].'">
+					  <input type="hidden" id="envioNacional" value="'.$respuesta["envioNacional"].'">
+				      <input type="hidden" id="envioInternacional" value="'.$respuesta["envioInternacional"].'">
+				      <input type="hidden" id="tasaMinimaNal" value="'.$respuesta["tasaMinimaNal"].'">
+				      <input type="hidden" id="tasaMinimaInt" value="'.$respuesta["tasaMinimaInt"].'">
+				      <input type="hidden" id="tasaPais" value="'.$respuesta["pais"].'">
+
+				';
+
+				?>
+				
+				<div class="formEnvio row">
+					
+					<h4 class="text-center well text-muted text-uppercase">Información de envío</h4>
+
+					<div class="col-xs-12 seleccionePais">
+						
+						
+
+					</div>
+
+				</div>
+
+				<br>
+
+				<div class="formaPago row">
+					
+					<h4 class="text-center well text-muted text-uppercase">Elige la forma de pago</h4>
+
+					<figure class="col-xs-6">
+						
+						<center>
+							
+							<input id="checkPaypal" type="radio" name="pago" value="paypal" checked>
+
+						</center>	
+						
+						<img src="<?php echo $url; ?>vistas/img/plantilla/paypal.jpg" class="img-thumbnail">		
+
+					</figure>
+
+					<figure class="col-xs-6">
+						
+						<center>
+							
+							<input id="checkPayu" type="radio" name="pago" value="payu">
+
+						</center>
+
+						<img src="<?php echo $url; ?>vistas/img/plantilla/payu.jpg" class="img-thumbnail">
+
+					</figure>
+
+				</div>
+
+				<br>
+
+				<div class="listaProductos row">
+					
+					<h4 class="text-center well text-muted text-uppercase">Productos a comprar</h4>
+
+					<table class="table table-striped tablaProductos">
+						
+						 <thead>
+						 	
+							<tr>		
+								<th>Producto</th>
+								<th>Cantidad</th>
+								<th>Precio</th>
+							</tr>
+
+						 </thead>
+
+						 <tbody>
+						 	
+
+
+						 </tbody>
+
+					</table>
+
+					<div class="col-sm-6 col-xs-12 pull-right">
+						
+						<table class="table table-striped tablaTasas">
+							
+							<tbody>
+								
+								<tr>
+									<td>Subtotal</td>	
+									<td><span class="cambioDivisa">USD</span> $<span class="valorSubtotal" valor="0">0</span></td>	
+								</tr>
+
+								<tr>
+									<td>Envío</td>	
+									<td><span class="cambioDivisa">USD</span> $<span class="valorTotalEnvio" valor="0">0</span></td>	
+								</tr>
+
+								<tr>
+									<td>Impuesto</td>	
+									<td><span class="cambioDivisa">USD</span> $<span class="valorTotalImpuesto" valor="0">0</span></td>	
+								</tr>
+
+								<tr>
+									<td><strong>Total</strong></td>	
+									<td><strong><span class="cambioDivisa">USD</span> $<span class="valorTotalCompra" valor="0">0</span></strong></td>	
+								</tr>
+
+							</tbody>	
+
+						</table>
+
+						 <div class="divisa">
+
+						 	<select class="form-control" id="cambiarDivisa" name="divisa">
+						 		
+							
+
+						 	</select>	
+
+						 	<br>
+
+						 </div>
+
+					</div>
+
+					<div class="clearfix"></div>
+
+					<form class="formPayu" style="display:none">
+					 
+						<input name="merchantId" type="hidden" value=""/>
+						<input name="accountId" type="hidden" value=""/>
+						<input name="description" type="hidden" value=""/>
+						<input name="referenceCode" type="hidden" value=""/>	
+						<input name="amount" type="hidden" value=""/>
+						<input name="tax" type="hidden" value=""/>
+						<input name="taxReturnBase" type="hidden" value=""/>
+						<input name="shipmentValue" type="hidden" value=""/>
+						<input name="currency" type="hidden" value=""/>
+						<input name="lng" type="hidden" value="es"/>
+						<input name="confirmationUrl" type="hidden" value="" />
+						<input name="responseUrl" type="hidden" value=""/>
+						<input name="declinedResponseUrl" type="hidden" value=""/>
+						<input name="displayShippingInformation" type="hidden" value=""/>
+						<input name="test" type="hidden" value="" />
+						<input name="signature" type="hidden" value=""/>
+
+					  <input name="Submit" class="btn btn-block btn-lg btn-default backColor" type="submit"  value="PAGAR" >
+					</form>
+					
+					<button class="btn btn-block btn-lg btn-default backColor btnPagar">PAGAR</button>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="modal-footer">
+      	
+      	</div>
+
+	</div>
+
+</div>
+
+
+
+<?php
+	$infoproducto = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
+	foreach ($infoproducto as $key => $infoproducto3) {
+		# code...
+	
+if($infoproducto3["tipo"] == "fisico"){
+
+	echo '<script type="application/ld+json">
+
+			{
+			  "@context": "http://schema.org/",
+			  "@type": "Product",
+			  "name": "'.$infoproducto3["titulo"].'",
+			  "image": [';
+
+			  for($i = 0; $i < count($multimedia); $i ++){
+
+			  	echo $servidor.$multimedia[$i]["foto"].',';
+
+			  }
+			
+			  echo '],
+			  "description": "'.$infoproducto3["descripcion"].'"
+	  
+			}
+
+		</script>';
+
+}else{
+
+	echo '<script type="application/ld+json">
+
+			{
+			  "@context": "http://schema.org",
+			  "@type": "Course",
+			  "name": "'.$infoproducto3["titulo"].'",
+			  "description": "'.$infoproducto3["descripcion"].'",
+			  "provider": {
+			    "@type": "Organization",
+			    "name": "Tu Logo",
+			    "sameAs": "'.$url.$infoproducto3["ruta"].'"
+			  }
+			}
+
+		</script>';
+
+}
+}
+?>
+

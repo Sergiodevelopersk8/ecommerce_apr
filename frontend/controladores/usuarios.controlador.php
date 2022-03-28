@@ -221,7 +221,7 @@ class ControladorUsuarios{
 
 				if($respuesta["email"] == $_POST["ingEmail"] && $respuesta["password"] == $encriptar){
 
-					if($respuesta["verificacion"] == 1){
+					if($respuesta["verificacion"] == 1 ){
 
 						echo'<script>
 
@@ -303,6 +303,8 @@ class ControladorUsuarios{
 				</script>';
 
 			}
+
+			
 
 		}
 
@@ -959,7 +961,8 @@ class ControladorUsuarios{
 						function(isConfirm){
 								 if (isConfirm) {	   
 								   window.location = "'.$url.'salir";
-								  } 
+								  								  
+								} 
 						});
 
 					  </script>';
